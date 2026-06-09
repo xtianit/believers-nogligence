@@ -3,12 +3,10 @@ import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import {
     BookOpen,
-    Award,
     CheckCircle,
     Edit2,
     Save,
     X,
-    Clock,
     Plus,
     Lock,
     Unlock,
@@ -51,182 +49,178 @@ type BibleVersions = {
 type ScriptureDB = Record<string, BibleVersions>;
 
 const initialScriptureDB: ScriptureDB = {
-  "Matthew 7:7": {
-    KJV: "7 Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:",
-    NKJV: "7 “Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.",
-    NIV: "7 “Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
-    ESV: "7 “Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.",
-    AMP: "7 “Ask and keep on asking and it will be given to you; seek and keep on searching and you will find; knock and keep on knocking and the door will be opened to you.",
-    NLT: "7 “Keep on asking, and you will receive what you ask for. Keep on seeking, and you will find. Keep on knocking, and the door will be opened to you."
+  "Genesis 1:1": {
+    "KJV": "In the beginning God created the heaven and the earth.",
+    "NKJV": "In the beginning God created the heavens and the earth.",
+    "NIV": "In the beginning God created the heavens and the earth.",
+    "ESV": "In the beginning, God created the heavens and the earth.",
+    "AMP": "In the beginning God (Elohim) created the heavens and the earth.",
+    "NLT": "In the beginning God created the heavens and the earth.",
   },
-  "Matthew 7:8": {
-    KJV: "8 For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened.",
-    NKJV: "8 For everyone who asks receives, and he who seeks finds, and to him who knocks it will be opened.",
-    NIV: "8 For everyone who asks receives; the one who seeks finds; and to the one who knocks, the door will be opened.",
-    ESV: "8 For everyone who asks receives, and the one who seeks finds, and to the one who knocks it will be opened.",
-    AMP: "8 For everyone who keeps on asking receives, and he who keeps on seeking finds, and to him who keeps on knocking, it will be opened.",
-    NLT: "8 For everyone who asks, receives. Everyone who seeks, finds. And to everyone who knocks, the door will be opened."
+  "James 1:17": {
+    "KJV": "Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.",
+    "NKJV": "Every good gift and every perfect gift is from above, and comes down from the Father of lights, with whom there is no variation or shadow of turning.",
+    "NIV": "Every good and perfect gift is from above, coming down from the Father of the heavenly lights, who does not change like shifting shadows.",
+    "ESV": "Every good gift and every perfect gift is from above, coming down from the Father of lights, with whom there is no variation or shadow due to change.",
+    "AMP": "Every good thing given and every perfect gift is from above, coming down from the Father of lights, with whom there is no variation or shifting shadow.",
+    "NLT": "Whatever is good and perfect is a gift coming down to us from God our Father, who created all the lights in the heavens. He never changes or casts a shifting shadow.",
   },
-  "1 Kings 18:41": {
-    KJV: "41 And Elijah said unto Ahab, Get thee up, eat and drink; for there is a sound of abundance of rain.",
-    NKJV: "41 Then Elijah said to Ahab, “Go up, eat and drink; for there is the sound of abundance of rain.”",
-    NIV: "41 And Elijah said to Ahab, “Go, eat and drink, for there is the sound of a heavy rain.”",
-    ESV: "41 And Elijah said to Ahab, “Go up, eat and drink, for there is a sound of the rushing of rain.”",
-    AMP: "41 Elijah said to Ahab, “Go up, eat and drink, for there is the sound of the roar of an abundance of rain.”",
-    NLT: "41 Then Elijah said to Ahab, “Go on up and have a food and drink, for I hear a mighty rainstorm coming!”"
+  "Psalm 132:15": {
+        "KJV": "I will abundantly bless her provision: I will satisfy her poor with bread.",
+        "NKJV": "I will abundantly bless her provision; I will satisfy her poor with bread.",
+        "NIV": "I will bless her with abundant provisions; her poor I will satisfy with food.",
+        "ESV": "I will abundantly bless her provisions; I will satisfy her poor with bread.",
+        "AMP": "I will abundantly bless her provisions; I will satisfy her poor with bread.",
+        "NLT": "I will bless this city and make it prosperous; I will satisfy its poor with food."
   },
-  "1 Kings 18:42": {
-    KJV: "42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he cast himself down upon the earth, and put his face between his knees,",
-    NKJV: "42 So Ahab went up to eat and drink. And Elijah went up to the top of Carmel; then he bowed down on the ground, and put his face between his knees,",
-    NIV: "42 So Ahab went off to eat and drink, but Elijah climbed to the top of Carmel, bent down to the ground and put his face between his knees.",
-    ESV: "42 So Ahab went up to eat and to drink. And Elijah went up to the top of Mount Carmel. And he bowed himself down on the earth and put his face between his knees.",
-    AMP: "42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he crouched down on the earth and put his face between his knees,",
-    NLT: "42 So Ahab went to eat and drink. But Elijah climbed to the top of Mount Carmel and bowed low to the ground and prayed with his face between his knees."
+  "John 8:32": {
+    "KJV": "And ye shall know the truth, and the truth shall make you free.",
+    "NKJV": "And you shall know the truth, and the truth shall make you free.",
+    "NIV": "Then you will know the truth, and the truth will set you free.",
+    "ESV": "and you will know the truth, and the truth will set you free.",
+    "AMP": "And you will know the truth [regarding Salvation], and the truth will set you free [from the penalty of sin].",
+    "NLT": "And you will know the truth, and the truth will set you free.",
   },
-  "1 Kings 18:41-42": {
-    KJV: "41 And Elijah said unto Ahab, Get thee up, eat and drink; for there is a sound of abundance of rain. 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he cast himself down upon the earth, and put his face between his knees,",
-    NKJV: "41 Then Elijah said to Ahab, “Go up, eat and drink; for there is the sound of abundance of rain.” 42 So Ahab went up to eat and drink. And Elijah went up to the top of Carmel; then he bowed down on the ground, and put his face between his knees,",
-    NIV: "41 And Elijah said to Ahab, “Go, eat and drink, for there is the sound of a heavy rain.” 42 So Ahab went off to eat and drink, but Elijah climbed to the top of Carmel, bent down to the ground and put his face between his knees.",
-    ESV: "41 And Elijah said to Ahab, “Go up, eat and drink, for there is a sound of the rushing of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Mount Carmel. And he bowed himself down on the earth and put his face between his knees.",
-    AMP: "41 Elijah said to Ahab, “Go up, eat and drink, for there is the sound of the roar of an abundance of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he crouched down on the earth and put his face between his knees,",
-    NLT: "41 Then Elijah said to Ahab, “Go on up and have a food and drink, for I hear a mighty rainstorm coming!” 42 So Ahab went to eat and drink. But Elijah climbed to the top of Mount Carmel and bowed low to the ground and prayed with his face between his knees."
+  "Matthew 15:29-37": {
+    "KJV": "29 And Jesus departed from thence, and came nigh unto the sea of Galilee; and went up into a mountain, and sat down there. 30 And great multitudes came unto him, having with them those that were lame, blind, dumb, maimed, and many others, and cast them down at Jesus' feet; and he healed them: 31 Insomuch that the multitude wondered, when they saw the dumb to speak, the maimed to be whole, the lame to walk, and the blind to see: and they glorified the God of Israel. 32 Then Jesus called his disciples unto him, and said, I have compassion on the multitude, because they continue with me now three days, and have nothing to eat: and I will not send them away fasting, lest they faint in the way. 33 And his disciples say unto him, Whence should we have so much bread in the wilderness, as to fill so great a multitude? 34 And Jesus saith unto them, How many loaves have ye? And they said, Seven, and a few little fishes. 35 And he commanded the multitude to sit down on the ground. 36 And he took the seven loaves and the fishes, and gave thanks, and brake them, and gave to his disciples, and the disciples to the multitude. 37 And they did all eat, and were filled: and they took up of the broken meat that was left seven baskets full.",
+    "NKJV": "29 Jesus departed from there, skirted the Sea of Galilee, and went up on the mountain and sat down there. 30 Then great multitudes came to Him, having with them the lame, blind, mute, maimed, and many others; and they laid them down at Jesus' feet, and He healed them. 31 So the multitude marveled when they saw the mute speaking, the maimed made whole, the lame walking, and the blind seeing; and they glorified the God of Israel. 32 Now Jesus called His disciples to Himself and said, 'I have compassion on the multitude, because they have now continued with Me three days and have nothing to eat. And I do not want to send them away hungry, lest they faint on the way.' 33 Then His disciples said to Him, 'Where could we get enough bread in the wilderness to fill such a great multitude?' 34 Jesus said to them, 'How many loaves do you have?' And they said, 'Seven, and a few little fish.' 35 So He commanded the multitude to sit down on the ground. 36 And He took the seven loaves and the fish and gave thanks, broke them and gave them to His disciples; and the disciples gave to the multitude. 37 So they all ate and were filled, and they took up seven large baskets full of the fragments that were left.",
+    "NIV": "29 Jesus left there and went along the Sea of Galilee. Then he went up on a mountainside and sat down. 30 Great crowds came to him, bringing the lame, the blind, the crippled, the mute and many others, and laid them at his feet; and he healed them. 31 The crowd was amazed when they saw the mute speaking, the crippled made well, the lame walking and the blind seeing; and they praised the God of Israel. 32 Jesus called his disciples to him and said, 'I have compassion for these people; they have already been with me three days and have nothing to eat. I do not want to send them away hungry, or they may faint on the way.' 33 His disciples answered, 'Where could we get enough bread in this remote place to feed such a crowd?' 34 'How many loaves do you have?' Jesus asked. 'Seven,' they replied, 'and a few small fish.' 35 He told the crowd to sit down on the ground. 36 Then he took the seven loaves and the fish, and when he had given thanks, he broke them and gave them to the disciples, and they in turn to the people. 37 They all ate and were satisfied. Afterward the disciples picked up seven basketfuls of broken pieces that were left over.",
+    "ESV": "29 Jesus went on from there and walked beside the Sea of Galilee. And he went up on the mountain and sat down there. 30 And great crowds came to him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they put them at his feet, and he healed them, 31 so that the crowd wondered, when they saw the mute speaking, the crippled healthy, the lame walking, and the blind seeing. And they glorified the God of Israel. 32 Then Jesus called his disciples to him and said, 'I have compassion on the crowd because they have been with me now three days and have nothing to eat. And I am unwilling to send them away hungry, lest they faint on the way.' 33 And the disciples said to him, 'Where are we to get enough bread in such a desolate place to feed so great a crowd?' 34 And Jesus said to them, 'How many loaves do you have?' They said, 'Seven, and a few small fish.' 35 And directing the crowd to sit down on the ground, 36 he took the seven loaves and the fish, and having given thanks he broke them and gave them to the disciples, and the disciples gave them to the crowds. 37 And they all ate and were satisfied. And they took up seven baskets full of the broken pieces left over.",
+    "AMP": "29 Jesus went on from there and walked beside the Sea of Galilee. And He went up on the mountain and sat down there. 30 And great crowds came to Him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they laid them down at His feet; and He healed them. 31 So the crowd was amazed when they saw the mute speaking, the crippled restored, the lame walking, and the blind seeing; and they praised and glorified the God of Israel. 32 Then Jesus called His disciples to Him and said, 'I have compassion on the crowd, because they have been with Me now three days and have nothing to eat; and I am unwilling to send them away hungry, lest they faint [from exhaustion] on the way.' 33 The disciples said to Him, 'Where are we to get enough bread in this isolated place to feed so great a crowd?' 34 Jesus asked them, 'How many loaves [of bread] do you have?' They said, 'Seven, and a few small fish.' 35 And He directed the crowd to sit down on the ground, 36 and He took the seven loaves and the fish; and when He had given thanks, He broke them and gave them to the disciples, and the disciples [gave them] to the crowds. 37 And they all ate and were satisfied. And they picked up seven large baskets full of the broken pieces that were left over.",
+    "NLT": "29 Jesus returned to the Sea of Galilee and climbed a hill and sat down. 30 A vast crowd brought to him people who were lame, blind, crippled, those who couldn't speak, and many others. They laid them before Jesus, and he healed them all. 31 The crowd was amazed! Those who hadn't been able to speak were talking, the crippled were made well, the lame were walking, and the blind could see again. And they praised the God of Israel. 32 Then Jesus called his disciples to him and said, 'I feel sorry for these people. They have been here with me for three days, and they have nothing left to eat. I don't want to send them away hungry, or they will faint along the way.' 33 The disciples replied, 'Where would we get enough food here in the wilderness for such a huge crowd?' 34 Jesus asked, 'How much bread do you have?' 'Seven loaves,' they replied, 'and a few small fish.' 35 So Jesus told all the people to sit down on the ground. 36 Then he took the seven loaves and the fish, thanked God for them, and broke them into pieces. He gave them to the disciples, who distributed the food to the crowd. 37 They all ate as much as they wanted. Afterward, the disciples picked up seven large baskets of leftover pieces.",
   },
-  "1 Kings 18:41-46": {
-    KJV: "41 And Elijah said unto Ahab, Get thee up, eat and drink; for there is a sound of abundance of rain. 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he cast himself down upon the earth, and put his face between his knees, 43 And said to his servant, Go up now, look toward the sea. And he went up, and looked, and said, There is nothing. And he said, Go again seven times. 44 And it came to pass at the seventh time, that he said, Behold, there ariseth a little cloud out of the sea, like a man's hand. And he said, Go up, say unto Ahab, Prepare thy chariot, and get thee down, that the rain stop thee not. 45 And it came to pass in the mean while, that the heaven was black with clouds and wind, and there was a great rain. And Ahab rode, and went to Jezreel. 46 And the hand of the Lord was on Elijah; and he girded up his loins, and ran before Ahab to the entrance of Jezreel.",
-    NKJV: "41 Then Elijah said to Ahab, “Go up, eat and drink; for there is the sound of abundance of rain.” 42 So Ahab went up to eat and drink. And Elijah went up to the top of Carmel; then he bowed down on the ground, and put his face between his knees, 43 and said to his servant, “Go up now, look toward the sea.” So he went up and looked, and said, “There is nothing.” And seven times he said, “Go again.” 44 Then it came to pass the seventh time, that he said, “There is a cloud, as small as a man’s hand, rising out of the sea!” So he said, “Go up, say to Ahab, ‘Prepare your chariot, and go down before the rain stops you.’” 45 Now it happened in the meantime that the sky became black with clouds and wind, and there was a heavy rain. So Ahab rode away and went to Jezreel. 46 Then the hand of the Lord came upon Elijah; and he girded up his loins and ran ahead of Ahab to the entrance of Jezreel.",
-    NIV: "41 And Elijah said to Ahab, “Go, eat and drink, for there is the sound of a heavy rain.” 42 So Ahab went off to eat and drink, but Elijah climbed to the top of Carmel, bent down to the ground and put his face between his knees. 43 “Go and look toward the sea,” he told his servant. And he went up and looked. “There is nothing there,” he said. Seven times Elijah said, “Go back.” 44 The seventh time the servant reported, “A cloud as small as a man’s hand is rising from the sea.” So Elijah said, “Go and tell Ahab, ‘Hitch up your chariot and go down before the rain stops you.’” 45 Meanwhile, the sky grew black with clouds, the wind rose, a heavy rain started falling and Ahab rode off to Jezreel. 46 The power of the Lord came on Elijah and, tucking his cloak into his belt, he ran ahead of Ahab all the way to Jezreel.",
-    ESV: "41 And Elijah said to Ahab, “Go up, eat and drink, for there is a sound of the rushing of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Mount Carmel. And he bowed himself down on the earth and put his face between his knees. 43 And he said to his servant, “Go up now, look toward the sea.” And he went up and looked and said, “There is nothing.” And he said, “Go again,” seven times. 44 And at the seventh time he said, “Behold, a little cloud like a man's hand is rising from the sea.” And he said, “Go up, say to Ahab, ‘Prepare your chariot and go down, lest the rain stop you.’” 45 And in a little while the heavens grew black with clouds and wind, and there was a great rain. And Ahab rode and went to Jezreel. 46 And the hand of the Lord was on Elijah, and he gathered up his garment and ran before Ahab to the entrance of Jezreel.",
-    AMP: "41 Elijah said to Ahab, “Go up, eat and drink, for there is the sound of the roar of an abundance of rain.” 42 So Ahab went up to eat and to drink. And Elijah went up to the top of Carmel; and he crouched down on the earth and put his face between his knees, 43 and said to his servant, “Go up now, look toward the sea.” So he went up and looked and said, “There is nothing.” Elijah said, “Go again” seven times. 44 And at the seventh time the servant said, “A cloud as small as a man’s hand is rising from the sea.” And Elijah said, “Go up, say to Ahab, ‘Prepare your chariot and go down, so that the rain does not stop you.’” 45 In a little while the sky grew black with clouds and wind, and there was a heavy rain. And Ahab rode and went to Jezreel. 46 Then the hand of the Lord was on Elijah [giving him supernatural strength]; he girded up his loins and outran Ahab to the entrance of Jezreel [nearly twenty miles].",
-    NLT: "41 Then Elijah said to Ahab, “Go on up and have a food and drink, for I hear a mighty rainstorm coming!” 42 So Ahab went to eat and drink. But Elijah climbed to the top of Mount Carmel and bowed low to the ground and prayed with his face between his knees. 43 Then he said to his servant, “Go and look out toward the sea.” The servant went and looked, then returned to Elijah and said, “I didn’t see anything.” Seven times Elijah told him to go and look. 44 Finally the seventh time, his servant told him, “I saw a little cloud about the size of a man’s hand rising from the sea.” Then Elijah shouted, “Hurry to Ahab and tell him, ‘Climb into your chariot and go back home. If you don’t hurry, the rain will stop you!’” 45 And soon the sky was black with clouds. A heavy wind brought a terrific rainstorm, and Ahab left quickly for Jezreel. 46 Then the Lord gave special strength to Elijah. He tucked his cloak into his belt and ran ahead of Ahab’s chariot all the way to the entrance of Jezreel."
+  "1 Peter 5:7": {
+    "KJV": "Casting all your care upon him; for he careth for you.",
+    "NKJV": "casting all your care upon Him, for He cares for you.",
+    "NIV": "Cast all your anxiety on him because he cares for you.",
+    "ESV": "casting all your anxieties on him, because he cares for you.",
+    "AMP": "casting all your anxiety [all your worries, all your concerns, once and for all] on Him, for He cares about you [with deepest affection, and watches over you very carefully].",
+    "NLT": "Give all your worries and cares to God, for he cares about you."
   },
-  "1 John 5:14": {
-    KJV: "14 And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us:",
-    NKJV: "14 Now this is the confidence that we have in Him, that if we ask anything according to His will, He hears us.",
-    NIV: "14 This is the confidence we have in approaching God: that if we ask anything according to his will, he hears us.",
-    ESV: "14 And this is the confidence that we have toward him, that if we ask anything according to his will he hears us.",
-    AMP: "14 This is the [remarkable degree of] confidence which we have in Him, that if we ask anything according to His will, [that is, consistent with His plan and purpose] He hears us.",
-    NLT: "14 And we are confident that he hears us whenever we ask for anything that pleases him."
+  "Matthew 15:30": {
+    "KJV": "And great multitudes came unto him, having with them those that were lame, blind, dumb, maimed, and many others, and cast them down at Jesus' feet; and he healed them:",
+    "NKJV": "Then great multitudes came to Him, having with them the lame, blind, mute, maimed, and many others; and they laid them down at Jesus’ feet, and He healed them.",
+    "NIV": "Great crowds came to him, bringing the lame, the blind, the crippled, the mute and many others, and laid them at his feet; and he healed them.",
+    "ESV": "And great crowds came to him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they put them at his feet, and he healed them,",
+    "AMP": "And great crowds came to Him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they laid them down at His feet; and He healed them.",
+    "NLT": "A vast crowd brought to him people who were lame, blind, crippled, those who couldn't speak, and many others. They laid them before Jesus, and he healed them all."
   },
-  "Isaiah 2:2-3": {
-    KJV: "2 And it shall come to pass in the last days, that the mountain of the Lord's house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it. 3 And many people shall go and say, Come ye, and let us go up to the mountain of the Lord, to the house of the God of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of the Lord from Jerusalem.",
-    NKJV: "2 Now it shall come to pass in the latter days That the mountain of the Lord’s house Shall be established on the top of the mountains, And shall be exalted above the hills; And all nations shall flow to it. 3 Many people shall come and say, “Come, and let us go up to the mountain of the Lord, To the house of the God of Jacob; He will teach us His ways, And we will walk in His paths.” For out of Zion shall go forth the law, And the word of the Lord from Jerusalem.",
-    NIV: "2 In the last days the mountain of the Lord’s temple will be established as the highest of the mountains; it will be shifted above the hills, and all nations will stream to it. 3 Many peoples will come and say, “Come, let us go up to the mountain of the Lord, to the temple of the God of Jacob. He will teach us his ways, so that we may walk in his paths.” The law will go out from Zion, the word of the Lord from Jerusalem.",
-    ESV: "2 It shall come to pass in the latter days that the mountain of the house of the Lord shall be established as the highest of the mountains, and shall be lifted up above the hills; and all the nations shall flow to it, 3 and many peoples shall come, and say: “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob, that he may teach us his ways and that we may walk in his paths.” For out of Zion shall go forth the law, and the word of the Lord from Jerusalem.",
-    AMP: "2 Now it will come to pass in the last days that the mountain of the house of the Lord will be established as the highest of the mountains and will be raised above the hills; and all the nations will stream to it. 3 And many peoples will come and say, “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob; that He may teach us His ways and that we may walk in His paths.” For the law will go out from Zion and the word of the Lord from Jerusalem.",
-    NLT: "2 In the last days, the mountain of the Lord’s house will be the highest of all—the most important place on earth. It will be raised above the other hills, and people from all over the world will stream there to worship. 3 People from many nations will come and say, “Come, let us go up to the mountain of the Lord, to the house of Jacob’s God. There he will teach us his ways, and we will walk in his paths.” For the Lord’s teaching will go out from Zion; his word will go out from Jerusalem."
+  "Matthew 11:28": {
+    "KJV": "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+    "NKJV": "Come to Me, all you who labor and are heavy laden, and I will give you rest.",
+    "NIV": "Come to me, all you who are weary and burdened, and I will give you rest.",
+    "ESV": "Come to me, all who labor and are heavy laden, and I will give you rest.",
+    "AMP": "Come to Me, all who are weary and heavily burdened [by religious rituals that provide no peace], and I will give you rest [refreshing your souls with salvation].",
+    "NLT": "Then Jesus said, \"Come to me, all of you who are weary and carry heavy burdens, and I will give you rest.\""
   },
-  "Micah 4:1-2": {
-    KJV: "1 But in the last days it shall come to pass, that the mountain of the house of the Lord shall be established in the top of the mountains, and it shall be exalted above the hills; and people shall flow unto it. 2 And many nations shall come, and say, Come, and let us go up to the mountain of the Lord, and to the house of the God of Jacob; and he will teach us of his ways, and we will walk in his paths: for the law shall go forth of Zion, and the word of the Lord from Jerusalem.",
-    NKJV: "1 Now it shall come to pass in the latter days That the mountain of the Lord’s house Shall be established on the top of the mountains, And shall be exalted above the hills; And peoples shall flow to it. 2 Many nations shall come and say, “Come, and let us go up to the mountain of the Lord, To the house of the God of Jacob; He will teach us His ways, And we will walk in His paths.” For out of Zion the law shall go forth, And the word of the Lord from Jerusalem.",
-    NIV: "1 In the last days the mountain of the Lord’s temple will be established as the highest of the mountains; it will be exalted above the hills, and peoples will stream to it. 2 Many nations will come and say, “Come, let us go up to the mountain of the Lord, to the temple of the God of Jacob. He will teach us his ways, so that we may walk in his paths.” The law will go out from Zion, the word of the Lord from Jerusalem.",
-    ESV: "1 It shall come to pass in the latter days that the mountain of the house of the Lord shall be established as the highest of the mountains, and it shall be lifted up above the hills; and peoples shall flow to it, 2 and many nations shall come, and say: “Come, let us go up to the mountain of the Lord, to the house of the God of Jacob, that he may teach us his ways and that we may walk in his paths.” For out of Zion shall go forth the law, and the word of the Lord from Jerusalem.",
-    AMP: "1 But it shall come to pass in the last days that the mountain of the house of the Lord shall be established as the highest of the mountains; and it shall be exalted above the hills, and peoples shall stream to it. 2 And many nations shall come and say, “Come, let us go up to the mountain of the Lord and to the house of the God of Jacob, that He may teach us His ways and that we may walk in His paths.” For the law shall go forth from Zion and the word of the Lord from Jerusalem.",
-    NLT: "1 In the last days, the mountain of the Lord’s house will be the highest of all—the most important place on earth. It will be raised above the other hills, and people from all over the world will stream there to worship. 2 People from many nations will come and say, “Come, let us go up to the mountain of the Lord, to the house of Jacob’s God. There he will teach us his ways, and we will walk in his paths.” For the Lord’s teaching will go out from Zion; his word will go out from Jerusalem."
-  }
+  "Matthew 15:30-31": {
+    "KJV": "30 And great multitudes came unto him, having with them those that were lame, blind, dumb, maimed, and many others, and cast them down at Jesus' feet; and he healed them: 31 Insomuch that the multitude wondered, when they saw the dumb to speak, the maimed to be whole, the lame to walk, and the blind to see: and they glorified the God of Israel.",
+    "NKJV": "30 Then great multitudes came to Him, having with them the lame, blind, mute, maimed, and many others; and they laid them down at Jesus’ feet, and He healed them. 31 So the multitude marveled when they saw the mute speaking, the maimed made whole, the lame walking, and the blind seeing; and they glorified the God of Israel.",
+    "NIV": "30 Great crowds came to him, bringing the lame, the blind, the crippled, the mute and many others, and laid them at his feet; and he healed them. 31 The crowd was amazed when they saw the mute speaking, the crippled made well, the lame walking and the blind seeing; and they praised the God of Israel.",
+    "ESV": "30 And great crowds came to him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they put them at his feet, and he healed them, 31 so that the crowd wondered, when they saw the mute speaking, the crippled healthy, the lame walking, and the blind seeing. And they glorified the God of Israel.",
+    "AMP": "30 And great crowds came to Him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they laid them down at His feet; and He healed them. 31 So the crowd was amazed when they saw the mute speaking, the crippled restored, the lame walking, and the blind seeing; and they praised and glorified the God of Israel.",
+    "NLT": "30 A vast crowd brought to him people who were lame, blind, crippled, those who couldn't speak, and many others. They laid them before Jesus, and he healed them all. 31 The crowd was amazed! Those who hadn't been able to speak were talking, the crippled were made well, the lame were walking, and the blind could see again. And they praised the God of Israel."
+  },
+  "Matthew 15:31-32": {
+    "KJV": "31 Insomuch that the multitude wondered, when they saw the dumb to speak, the maimed to be whole, the lame to walk, and the blind to see: and they glorified the God of Israel. 32 Then Jesus called his disciples unto him, and said, I have compassion on the multitude, because they continue with me now three days, and have nothing to eat: and I will not send them away fasting, lest they faint in the way.",
+    "NKJV": "31 So the multitude marveled when they saw the mute speaking, the maimed made whole, the lame walking, and the blind seeing; and they glorified the God of Israel. 32 Now Jesus called His disciples to Himself and said, “I have compassion on the multitude, because they have now continued with Me three days and have nothing to eat. And I do not want to send them away hungry, lest they faint on the way.”",
+    "NIV": "31 The crowd was amazed when they saw the mute speaking, the crippled made well, the lame walking and the blind seeing; and they praised the God of Israel. 32 Jesus called his disciples to him and said, “/I have compassion for these people; they have already been with me three days and have nothing to eat. I do not want to send them away hungry, or they may faint on the way.”",  
+    "ESV": "31 so that the crowd wondered, when they saw the mute speaking, the crippled healthy, the lame walking, and the blind seeing. And they glorified the God of Israel. 32 Then Jesus called his disciples to him and said, “I have compassion on the crowd because they have been with me now three days and have nothing to eat. And I am unwilling to send them away hungry, lest they faint on the way.”",
+    "AMP": "31 So the crowd was amazed when they saw the mute speaking, the crippled restored, the lame walking, and the blind seeing; and they praised and glorified the God of Israel. 32 Then Jesus called His disciples to Him and said, “I have compassion on the crowd, because they have been with Me now three days and have nothing to eat; and I am unwilling to send them away hungry, lest they faint [from exhaustion] on the way.”",
+    "NLT": "31 The crowd was amazed! Those who hadn't been able to speak were talking, the crippled were made well, the lame were walking, and the blind could see again. And they praised the God of Israel. 32 Then Jesus called his disciples to him and said, “I feel sorry for these people. They have been here with me for three days, and they have nothing left to eat. I don't want to send them away hungry, or they will faint along the way.”",
+  },
+  "James 1:6-8": {
+    "KJV": "6 But let him ask in faith, nothing wavering. For he that wavering is like a wave of the sea driven with the wind and tossed. 7 For let not that man think that he shall receive any thing of the Lord. 8 A double minded man is unstable in all his ways.",
+    "NKJV": "6 But let him ask in faith, with no doubting, for he who doubts is like a wave of the sea driven and tossed by the wind. 7 For let not that man suppose that he will receive anything from the Lord; 8 he is a double-minded man, unstable in all his ways.",
+    "NIV": "6 But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind. 7 That person should not expect to receive anything from the Lord. 8 Such a person is double-minded and unstable in all they do.",
+    "ESV": "6 But let him ask in faith, with no doubting, for the one who doubts is like a wave of the sea that is driven and tossed by the wind. 7 For that person must not suppose that he will receive anything from the Lord; 8 he is a double-minded man, unstable in all his ways.",
+    "AMP": "6 But he must ask [for wisdom] in faith, without doubting [God’s willingness to help], for the one who doubts is like a surging wave of the sea, blown and tossed by the wind. 7 For that person must not expect that he will receive anything [at all] from the Lord, 8 being a double-minded man, unstable and restless in all his ways [in everything he thinks, feels, or does].",
+    "NLT": "6 But when you ask him, be sure that your faith is in God alone. Do not doubt, for a person with divided loyalty is as unsettled as a wave of the sea that is blown and tossed by the wind. 7 Such people should not expect to receive anything from the Lord. 8 Their loyalty is divided between God and the world, and they are unstable in everything they do."
+  },
+  "Psalm 100:4": {
+    "KJV": "Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name.",
+    "NKJV": "Enter into His gates with thanksgiving, And into His courts with praise. Be thankful to Him, and bless His name.",
+    "NIV": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.",
+    "ESV": "Enter his gates with thanksgiving, and his courts with praise! Give thanks to him; bless his name!",
+    "AMP": "Enter His gates with a song of thanksgiving And His courts with praise. Be thankful to Him, bless and praise His name.",
+    "NLT": "Enter his gates with thanksgiving; go into his courts with praise. Give thanks to him and praise his name."
+  },
+  "Psalm 22:3": {
+    "KJV": "But thou art holy, O thou that inhabitest the praises of Israel.",
+    "NKJV": "But You are holy, Enthroned in the praises of Israel.",
+    "NIV": "Yet you are enthroned as the Holy One; you are the one Israel praises.",
+    "ESV": "Yet you are holy, enthroned on the praises of Israel.",
+    "AMP": "Yet You are holy, O You who are enthroned upon the praises of Israel.",
+    "NLT": "Yet you are holy, enthroned on the praises of Israel."
+  },
+  "Psalm 16:11": {
+    "KJV": "Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore.",
+    "NKJV": "You will show me the path of life; In Your presence is fullness of joy; At Your right hand are pleasures forevermore.",
+    "NIV": "You make known to me the path of life; you will fill me with joy in your presence, with eternal pleasures at your right hand.",
+    "ESV": "You make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore.",
+    "AMP": "You will make known to me the path of life; In Your presence is fullness of joy; In Your right hand there are pleasures forevermore.",
+    "NLT": "You will show me the way of life, granting me the joy of your presence and the pleasures of living with you forever."
+  },
+  "Matthew 15:34-36": {
+    "KJV": "34 And Jesus saith unto them, How many loaves have ye? And they said, Seven, and a few little fishes. 35 And he commanded the multitude to sit down on the ground. 36 And he took the seven loaves and the fishes, and gave thanks, and brake them, and gave to his disciples, and the disciples to the multitude.",
+    "NKJV": "34 Jesus said to them, 'How many loaves do you have?' They said, 'Seven, and a few small fish.' 35 So He commanded the multitude to sit down on the ground. 36 And He took the seven loaves and the fish and gave thanks, broke them and gave them to His disciples; and the disciples gave them to the multitude.",
+    "NIV": "34 'How many loaves do you have?' Jesus asked. 'Seven,' they replied, 'and a few small fish.' 35 He told the crowd to sit down on the ground. 36 Then he took the seven loaves and the fish, and when he had given thanks, he broke them and gave them to the disciples, and they in turn to the people.",
+    "ESV": "34 And Jesus said to them, 'How many loaves do you have?' They said, 'Seven, and a few small fish.' 35 And directing the crowd to sit down on the ground, 36 he took the seven loaves and the fish, and having given thanks he broke them and gave them to the disciples, and the disciples gave them to the crowds.",
+    "AMP": "34 Jesus asked them, 'How many loaves [of bread] do you have?' They said, 'Seven, and a few small fish.' 35 And He directed the crowd to sit down on the ground, 36 and He took the seven loaves and the fish; and when He had given thanks, He broke them and gave them to the disciples, and the disciples [gave them] to the crowds.",
+    "NLT": "34 Jesus asked, 'How much bread do you have?' 'Seven loaves,' they replied, 'and a few small fish.' 35 So Jesus told all the people to sit down on the ground. 36 Then he took the seven loaves and the fish, thanked God for them, and broke them into pieces. He gave them to the disciples, who distributed the food to the crowd."
+  },
+  "Luke 6:38": {
+    "KJV": "Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom. For with the same measure that ye mete withal it shall be measured to you again.",
+    "NKJV": "Give, and it will be given to you: good measure, pressed down, shaken together, and running over will be put into your bosom. For with the same measure that you use, it will be measured back to you.",
+    "NIV": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you.",
+    "ESV": "give, and it will be given to you. Good measure, pressed down, shaken together, running over, will be put into your lap. For with the measure you use it will be measured back to you.",
+    "AMP": "Give, and it will be given to you. A good measure, pressed down, shaken together, running over, will they pour into the lap of your robe. For by your standard of measure [that is, the measure you use when you confer benefits on others] it will be measured to you in return.",
+    "NLT": "Give, and you will receive. Your gift will return to you in full—pressed down, shaken together to make room for more, running over, and poured into your lap. The amount you give will determine the amount you get back."
+  },
+  "2 Corinthians 9:6-8": {
+    "KJV": "6 But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully. 7 Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver. 8 And God is able to make all grace abound toward you; that ye, always having all sufficiency in all things, may abound to every good work:",
+    "NKJV": "6 But this I say: He who sows sparingly will also reap sparingly, and he who sows bountifully will also reap bountifully. 7 So let each one give as he purposes in his heart, not grudgingly or of necessity; for God loves a cheerful giver. 8 And God is able to make all grace abound toward you, that you, always having all sufficiency in all things, may have an abundance for every good work.",
+    "NIV": "6 Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows bountifully will also reap bountifully. 7 Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver. 8 And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work.",
+    "ESV": "6 The point is this: whoever sows sparingly will also reap sparingly, and whoever sows bountifully will also reap bountifully. 7 Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver. 8 And God is able to make all grace abound to you, so that having all sufficiency in all things at all times, you may abound in every good work.",
+    "AMP": "6 Now [remember] this: he who sows sparingly will also reap sparingly, and he who sows generously will also reap generously. 7 Let each one give [thoughtfully and with purpose] just as he has decided in his heart, not grudgingly or under compulsion, for God loves a cheerful giver [and delights in the one whose heart is in his gift]. 8 And God is able to make all grace [every favor and earthly blessing] come in abundance to you, so that you may always [under all circumstances, regardless of the need] have complete sufficiency in everything [being completely self-sufficient in Him], and have an abundance for every good work and act of charity.",
+    "NLT": "6 Remember this—a farmer who plants only a few seeds will get a small crop. But the one who plants generously will get a generous crop. 7 You must each decide in your heart how much to give. And don’t give reluctantly or in response to pressure. “For God loves a person who gives cheerfully.” 8 And God will generously provide all you need. Then you will always have everything you need and plenty left over to share with others."
+  },
+  "Deuteronomy 8:18": {
+    "KJV": "But thou shalt remember the LORD thy God: for it is he that giveth thee power to get wealth, that he may establish his covenant which he sware unto thy fathers, as it is this day.",
+    "NKJV": "And you shall remember the LORD your God, for it is He who gives you power to get wealth, that He may establish His covenant which He swore to your fathers, as it is this day.",
+    "NIV": "But remember the LORD your God, for it is he who gives you the ability to produce wealth, and so confirms his covenant, which he swore to your ancestors, as it is today.",
+    "ESV": "You shall remember the LORD your God, for it is he who gives you power to get wealth, that he may confirm his covenant that he swore to your fathers, as it is this day.",
+    "AMP": "But you shall remember [with profound respect] the LORD your God, for it is He who is giving you power to make wealth, that He may confirm His covenant which He swore to your fathers, as it is this day.",
+    "NLT": "Remember the LORD your God. He is the one who gives you power to be successful, in order to fulfill the covenant he confirmed to your ancestors with an oath, as he did today."
+  },
+  "Matthew 15:35": {
+    "KJV": "And he commanded the multitude to sit down on the ground.",
+    "NKJV": "So He commanded the multitude to sit down on the ground.",
+    "NIV": "He told the crowd to sit down on the ground.",
+    "ESV": "And directing the crowd to sit down on the ground,",
+    "AMP": "And He directed the crowd to sit down on the ground,",
+    "NLT": "So Jesus told all the people to sit down on the ground."
+  },
+  "Joshua 1:7-8": {
+    "KJV": "7 Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left, that thou mayest prosper whithersoever thou goest. 8 This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.",
+    "NKJV": "7 Only be strong and very courageous, that you may observe to do according to all the law which Moses My servant commanded you; do not turn from it to the right hand or to the left, that you may prosper wherever you go. 8 This Book of the Law shall not depart from your mouth, but you shall meditate in it day and night, that you may observe to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success.",
+    "NIV": "7 'Be strong and very courageous. Be careful to obey all the law my servant Moses gave you; do not turn from it to the right or to the left, that you may be successful wherever you go. 8 Keep this Book of the Law always on your lips; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful.'",
+    "ESV": "7 Only be strong and very courageous, being careful to do according to all the law that Moses my servant commanded you. Do not turn from it to the right hand or to the left, that you may have good success wherever you go. 8 This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success.",
+    "AMP": "7 Only be strong and very courageous; be careful to do [everything] in accordance with the entire law which Moses My servant commanded you; do not turn from it to the right or to the left, so that you may prosper and be successful wherever you go. 8 This Book of the Law shall not depart from your mouth, but you shall read [and meditate on] it day and night, so that you may be careful to do [everything] in accordance with all that is written in it; for then you will make your way prosperous, and then you will be successful.",
+    "NLT": "7 Be strong and very courageous. Be careful to obey all the instructions Moses gave you. Do not deviate from them, turning either to the right or to the left. Then you will be successful in everything you do. 8 Study this Book of Instruction continually. Meditate on it day and night so you will be sure to obey everything written in it. Only then will you prosper and succeed in all you do."
+  },
+  "Hebrews 13:8": {
+    "KJV": "Jesus Christ the same yesterday, and to day, and for ever.",
+    "NKJV": "Jesus Christ is the same yesterday, today, and forever.",
+    "NIV": "Jesus Christ is the same yesterday and today and forever.",
+    "ESV": "Jesus Christ is the same yesterday and today and forever.",
+    "AMP": "Jesus Christ is the same [yesterday, today, and forever].",
+    "NLT": "Jesus Christ is the same yesterday, today, and forever."
+  },
+
 };
 
-const quizQuestions = [
-    {
-        q: "According to the introduction, what has caused some believers to consider leaving God?",
-        a: [
-            "Lack of church attendance",
-            "Discouragement from unanswered prayers",
-            "Persecution from the government",
-            "Loss of material possessions"
-        ],
-        correct: 1
-    },
-    {
-        q: "What spiritual principle is taught by Elijah praying after declaring the coming rain?",
-        a: [
-            "Faith replaces prayer",
-            "Miracles happen automatically",
-            "Declarations must be backed by persistent prayer",
-            "Prophets never need to pray"
-        ],
-        correct: 2
-    },
-    {
-        q: "Why was Ahab unable to eat before Elijah’s good news?",
-        a: [
-            "He was observing a religious fast",
-            "He was troubled by the suffering caused by the drought",
-            "He had no food in the palace",
-            "He was sick"
-        ],
-        correct: 1
-    },
-    {
-        q: "What does the lesson suggest is necessary for some prayers to be answered?",
-        a: [
-            "Waiting for a prophet to pray for you",
-            "Offering large sacrifices",
-            "Coming to the spiritual equivalent of Mt. Carmel",
-            "Changing your location physically"
-        ],
-        correct: 2
-    },
-    {
-        q: "What is the deeper meaning of Elijah being ‘buried in prayer’?",
-        a: [
-            "Repeating the same words",
-            "Avoiding public worship",
-            "Praying only in secret places",
-            "Complete humility and total concentration before God"
-        ],
-        correct: 3
-    },
-    {
-        q: "What condition in Israel led to the three and a half years of closed heavens?",
-        a: [
-            "Natural climate change",
-            "Their transgressions",
-            "Enemy attacks",
-            "Poor leadership alone"
-        ],
-        correct: 1
-    },
-    {
-        q: "According to the lesson, what must accompany revelations from God?",
-        a: [
-            "Immediate celebration",
-            "Prayer that removes obstacles",
-            "Public announcements",
-            "Fasting only"
-        ],
-        correct: 1
-    },
-    {
-        q: "What key spiritual danger is highlighted in the introduction?",
-        a: [
-            "Praying too often",
-            "Overconfidence in prayer",
-            "Turning away from God due to discouragement",
-            "Trusting prophets too much"
-        ],
-        correct: 2
-    },
-    {
-        q: "What does Elijah’s example teach about delayed answers to prayer?",
-        a: [
-            "Delays mean God has rejected the prayer",
-            "Prayer is unnecessary after prophecy",
-            "Only sinners experience delays",
-            "Even great prophets must pray persistently"
-        ],
-        correct: 3
-    },
-    {
-        q: "What condition must a believer meet for God to work through them according to the conclusion?",
-        a: [
-            "They must perform miracles",
-            "They must not faint or give up",
-            "They must be prophets",
-            "They must live on a mountain"
-        ],
-        correct: 1
-    }
-];
+
 
 
 
@@ -254,16 +248,7 @@ const SundaySchoolApp = () => {
         versions: { KJV: "", NKJV: "", NIV: "", ESV: "", AMP: "", NLT: "" },
     });
     const [verseLoading, setVerseLoading] = useState(false);
-    const [quizActive, setQuizActive] = useState(false);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [score, setScore] = useState(0);
-    const [timeLeft, setTimeLeft] = useState(50);
-    const [showResults, setShowResults] = useState(false);
-    const [faithRating, setFaithRating] = useState(5);
-    const [commitments, setCommitments] = useState<
-        Array<{ text: string; date: string }>
-    >([]);
-    const [commitmentInput, setCommitmentInput] = useState("");
+    
     const [editingContent, setEditingContent] = useState<string | null>(null);
 
     type SubPoint = { title: string; content: string; scripture?: string };
@@ -291,78 +276,93 @@ const SundaySchoolApp = () => {
     };
     
 
-    const [contentData, setContentData] = useState<ContentData>({
-        lessonDate: "February 15, 2026",
-        lessonTitle: "Praying Until Something Happens (Part 1)",
+const [contentData, setContentData] = useState<ContentData>({
+    lessonDate: "June 14, 2026",
+    lessonTitle: "PRINCIPLES OF DIVINE PROVISION",
 
-        memoryVerse:
-            "For everyone that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened. - Matt. 7:8",
-        memoryVerseRef: "Matthew 7:8",
+    memoryVerse:
+        "I will abundantly bless her provision; I will satisfy her poor with bread. - Ps. 132:15",
+    memoryVerseRef: "Psalm 132:15",
 
-        introScriptures: ["1 John 5:14", "Matthew 7:7"],
-        lessonIntroScriptures: ["1 Kings 18:41-46"],
+    introScriptures: ["Genesis 1:1", "James 1:17", "John 8:32"],
+    lessonIntroScriptures: ["Matthew 15:29-37"],
 
-        introduction:
-            "Even though we were not supposed to hinge our worship to God for His provisions, many children of God have often reached the limit of their endurance due to unanswered prayers. Some people have turned away from God while others are still brooding over the idea of leaving God with excuses of unanswered prayers. If only we could go a little more distance in prayer, our answers will come because prayers done according to His will always enjoy answers – 1 John 5:14; Matt. 7:7.",
+    introduction:
+        "God is known to be the creator of all things and the One from whom every good and perfect gift comes. Gen 1:1; James 1:17. Owing to these facts, many people have sought him for provisions without having their desires met. The ultimate reason is because they neither understood the principles bordering around provisions nor walked in it. Man is a product of what he knows. John 8:32.",
 
-        aims:
-            "To encourage Christ believers to pray continuously until the results are received.",
+    aims:
+        "To tailor the believer to the knowledge of how to receive God's provisions.",
 
-        objectives:
-            "That Christians be delivered from discouragement and backsliding.",
+    objectives:
+        "To get the believer to the place of endowment with the rich provisions of God.",
 
-        lessonIntro:
-            "Ahab and Israel had experienced three and half years of closed heavens and economic constraint because of their transgressions but received the best news of that time from Prophet Elijah that it was going to rain. Elijah prayed fervently after declaration until it rained even when it appeared futile enough to be discouraging. Consider the kind of fiery Prophet he was to have delayed answer. (1 Kings 18:41–46)",
+    lessonIntro:
+        "Jesus returned to Galilee to better the lot of His people and many took advantage of it and came to Him. They also came with their burdens which were lifted from them and had supernatural provision of food. This entire scene is a revelation of the relationship between man and God with principles that activates Divine provisions. Let us deduce the principles provided from the picture that is presented in the passage.",
 
-        lessonPoints: [
-            {
-                title: "APPETITE DENIED BY WORRIES:",
-                content:
-                    "Verse 41 - King Ahab was worried about the agonizing experience of Israel from the closed heaven and hardship. The good news is that right relationship with God and prayers can change conditions.",
-                scriptures: ["1 Kings 18:41"],
-                subPoints: [],
-            },
-            {
-                title: "REVELATION REQUIRED PRAYER BACK-UP:",
-                content:
-                    "Verse 41-42 – Elijah heard the sound of rain but didn’t wait for it to fall. He prayed it down. Your revelations require prayers to facilitate or to clear the obstacles.",
-                scriptures: ["1 Kings 18:41-42"],
-                subPoints: [],
-            },
-            {
-                title: "GOOD NEWS REVIVES:",
-                content:
-                    "Verse 42 – King Ahab was encouraged by the good news to eat after starving for a long while because of the ugly events in the kingdom. We are under obligation to tell other people about the gospel of hope.",
-                scriptures: ["1 Kings 18:42"],
-                subPoints: [],
-            },
-            {
-                title: "THE TOP OF THE MT. CARMEL:",
-                content:
-                    "Verse 42 – Some prayers cannot be answered until you come to the top of Mt. Carmel (the House of the Lord). Isa. 2:2–3; Micah 4:1–2. This is the place where the altar was repaired, where blood was shed, and where the fire fell. If Elijah could recognize that, we need to.",
-                scriptures: ["1 Kings 18:42", "Isaiah 2:2-3", "Micah 4:1-2"],
-                subPoints: [],
-            },
-            {
-                title: "BURIED IN PRAYER:",
-                content:
-                    "Verse 42 – Elijah humbled himself before the Lord and was completely buried in prayer. He gave total concentration. He was cut off from the surrounding and the world. He was in turn with divinity. He emptied himself and put on immortality. No wonder his prayers were answered. If we adopt his model, we will surely receive answers to prayers in due time.",
-                scriptures: ["1 Kings 18:42"],
-                subPoints: [],
-            },
-        ],
+    lessonPoints: [
+        {
+            title: "KNOWLEDGE OF GOD'S CARE:",
+            content:
+                "The first principle of divine provision is to realize that God cares for you and what you're going through. 1 Pet 5:7. These people came to Jesus with their heavy burdens because they knew that He will help them or else they would have come alone because of uncertainty. Verse 30",
+            scriptures: ["1 Peter 5:7", "Matthew 15:30"],
+            subPoints: [],
+        },
+        {
+            title: "RECIPIENTS HAVE TO COME TO JESUS:",
+            content:
+                "If you want to receive divine provisions then you have to come to Jesus. Matt 11:28. Don't say He knows what I'm going through so let him help if he's willing. These people had the need and thus came to him without waiting for others to stand in for them. Verse 30.",
+            scriptures: ["Matthew 11:28", "Matthew 15:30"],
+            subPoints: [],
+        },
+        {
+            title: "CASTING NEEDS AT JESUS' FEET:",
+            content:
+                "This is the only way to receive his attention and help. He took care of every case that was laid at his feet. Verse 30-31, 1 Pet 5:7. Be sure that Jesus is in the place where you're taking your burdens to and also that you're not leaving them at the feet of church.",
+            scriptures: ["Matthew 15:30-31", "1 Peter 5:7"],
+            subPoints: [],
+        },
+        {
+            title: "TARRY WITH JESUS:",
+            content:
+                "One of the principles is to remain with Jesus wherever He is as these people did. They did not leave after one miracle service but stayed beyond. Verse 31 - 32. Most people who seek God today can't receive provisions because they are so unstable bodily and in heart. James 1:6-8.",
+            scriptures: ["Matthew 15:31-32", "James 1:6-8"],
+            subPoints: [],
+        },
+        {
+            title: "PRAISING THE GOD OF ISRAEL:",
+            content:
+                "Thanksgiving brings man to the entrance of Heaven but Praises ushers him to the very throne of God. Ps 100:4. They praised the God of Israel but which one are you praising. Be sure that you're praising God and that the praises are to the true God because he inhabits it (Ps 22:3) and in his presence there is fullness of joy. Ps 16:11.",
+            scriptures: ["Psalm 100:4", "Psalm 22:3", "Psalm 16:11"],
+            subPoints: [],
+        },
+        {
+            title: "GIVING TO THE RIGHT SOURCE:",
+            content:
+                "Sowing remains the only way of determining harvest but prayer only creates an atmosphere for sowing and reminding God to facilitate the harvest. The people gave their substance and received abundantly to overflowing. Verse 34 - 36; Luke 6:38; 2 Cor 9:6-8; Deut 8:18.",
+            scriptures: ["Matthew 15:34-36", "Luke 6:38", "2 Corinthians 9:6-8", "Deuteronomy 8:18"],
+            subPoints: [],
+        },
+        {
+            title: "OBEYING THE COMMANDMENTS OF GOD:",
+            content:
+                "Jesus asked them to sit down and they obeyed. Verse 35. This is not applicable to many of us as we daily violate his commandments. See Joshua 1:7-8.",
+            scriptures: ["Matthew 15:35", "Joshua 1:7-8"],
+            subPoints: [],
+        },
+    ],
 
-        conclusion:
-            "The God of Elijah who sent down fire is also your God, and He is delighted to work through you if you faint not like Elijah didn’t.",
+    conclusion:
+        "The principles are still the same today and if applied will give unequal divine provisions. Heb 13:8.",
 
-        conclusionScriptures: [],
+    conclusionScriptures: ["Hebrews 13:8"],
 
-        prayerPoints: [
-            "Father, give me the grace to pray continuously until my answers come.",
-            "Lord, deliver me from discouragement and strengthen my faith while I wait for Your answers.",
-            "Father, help me to humble myself in prayer and remain persistent like Elijah until something happens.",
-        ],
-    });
+    prayerPoints: [
+        "Father, clear away all uncertainty and grant me a deep revelation and knowledge of Your personal care for my life.",
+        "Lord, give me the spiritual stability to tarry in Your presence without wavering, even when answers take time.",
+        "Father, give me an obedient heart to completely follow Your instructions so I can walk in the fullness of Your divine provision.",
+    ],
+});
+
 
 
 
@@ -454,62 +454,13 @@ const SundaySchoolApp = () => {
         }));
     };
 
-    useEffect(() => {
-        let timer: ReturnType<typeof setInterval> | undefined;
-        if (quizActive && timeLeft > 0 && !showResults) {
-            timer = setInterval(() => {
-                setTimeLeft((prev) => {
-                    if (prev <= 1) {
-                        endQuiz();
-                        return 0;
-                    }
-                    return prev - 1;
-                });
-            }, 1000);
-        }
-        return () => {
-            if (timer) clearInterval(timer);
-        };
-    }, [quizActive, timeLeft, showResults]);
+    
 
-    const startQuiz = () => {
-        setQuizActive(true);
-        setCurrentQuestion(0);
-        setScore(0);
-        setTimeLeft(50);
-        setShowResults(false);
-    };
+   
 
-    const checkAnswer = (choice: number) => {
-        if (!quizActive || showResults) return;
-        const correct = quizQuestions[currentQuestion].correct === choice;
-        const timeBonus = Math.floor(timeLeft / 10);
-        const points = correct ? 10 + timeBonus : 0;
-        if (correct) setScore((prev) => prev + points);
-        if (currentQuestion < quizQuestions.length - 1) {
-            setTimeout(() => setCurrentQuestion((prev) => prev + 1), 1000);
-        } else {
-            setTimeout(() => endQuiz(), 1000);
-        }
-    };
+   
 
-    const endQuiz = () => {
-        setQuizActive(false);
-        setShowResults(true);
-    };
-
-    const addCommitment = () => {
-        if (commitmentInput.trim()) {
-            setCommitments((prev) => [
-                ...prev,
-                {
-                    text: commitmentInput,
-                    date: new Date().toLocaleDateString(),
-                },
-            ]);
-            setCommitmentInput("");
-        }
-    };
+   
 
     useEffect(() => {
         const handleKeyPress = (e: KeyboardEvent) => {
@@ -646,7 +597,7 @@ const SundaySchoolApp = () => {
 
 
         if (appLoading) {
-    const animatedText = "Dancing in Fame and Glory".split("");
+    const animatedText = "June is my Month of Divine Mercy - Eccl. 33:17-19".split("");
 
     return (
         <div className="fixed inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center z-50">
@@ -753,7 +704,7 @@ const SundaySchoolApp = () => {
                             Sunday School Lesson
                         </h1>
                         <p className="text-xl opacity-80">
-                            Praying Until Something Happens (Part 1)
+                            PRINCIPLES OF DIVINE PROVISION
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -916,8 +867,6 @@ const SundaySchoolApp = () => {
                         "intro",
                         "lesson",
                         "conclusion",
-                        "application",
-                        "quiz",
                         "prayer",
                     ].map((tab) => (
                         <button
@@ -1025,19 +974,19 @@ const SundaySchoolApp = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-bold mb-3">
-                                        Text: 1 Kings 18:41-46
+                                        Text: Matthew 15:29-37
                                     </h3>
                                     <div className="flex gap-2 flex-wrap">
                                         <button
                                             onClick={() =>
                                                 showBibleVersions(
-                                                    "1 Kings 18:41-46"
+                                                    "Matthew 15:29-37"
                                                 )
                                             }
                                             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2"
                                         >
                                         <BookOpen size={16} />
-                                            Read 1 Kings 18:41-46
+                                            Read Matthew 15:29-37
                                         </button>
 
                                     </div>
@@ -1069,25 +1018,36 @@ const SundaySchoolApp = () => {
                                                 <button
                                                 onClick={() =>
                                                     showBibleVersions(
-                                                        "1 John 5:14"
+                                                        "Genesis 1:1"
                                                     )
                                                 }
                                             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
                                             >
                                             <BookOpen size={16} />
-                                                1 John 5:14
+                                                Genesis 1:1
                                             </button>
 
                                             <button
                                             onClick={() =>
                                                 showBibleVersions(
-                                                    "Matthew 7:7"
+                                                    "James 1:17"
                                                 )
                                             }
                                          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
                                         >
                                             <BookOpen size={16} />
-                                                Matthew 7:7
+                                                James 1:17
+                                            </button>
+                                            <button
+                                            onClick={() =>
+                                                showBibleVersions(
+                                                    "John 8:32"
+                                                )
+                                            }
+                                         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
+                                        >
+                                            <BookOpen size={16} />
+                                                John 8:32
                                             </button>
                                             </div>
                                             
@@ -1590,100 +1550,7 @@ const SundaySchoolApp = () => {
                         )}
             
 
-                        {activeTab === "application" && (
-                            <div className="space-y-6">
-                            <h3 className="text-2xl font-bold mb-4">Personal Application</h3>
-
-                            {/* Self-Assessment */}
-                            <div
-                            className={`${
-                                darkMode ? "bg-gray-700" : "bg-gradient-to-r from-blue-50 to-indigo-50"
-                            } p-6 rounded-lg`}
-                            >
-                            <h4 className="text-xl font-semibold mb-4">
-                                Self-Assessment: Persistence in Prayer
-                            </h4>
-
-                            <p className="mb-4">
-                                On a scale of 1 to 10, how consistent are you in praying until you receive an
-                                answer—without discouragement or giving up—according to God’s will (Matt. 7:7–8; 1
-                                John 5:14)?
-                            </p>
-
-                            <div className="flex items-center gap-4">
-                                <input
-                                type="range"
-                                min="1"
-                                max="10"
-                                value={faithRating}
-                                onChange={(e) => setFaithRating(Number(e.target.value))}
-                                className="flex-1"
-                                />
-                                <span className="text-2xl font-bold text-blue-600">{faithRating}/10</span>
-                            </div>
-
-                            <p className="mt-3 text-sm italic">
-                                {faithRating >= 8
-                                ? "Excellent! Stay consistent—keep praying and trusting God until the answer comes."
-                                : faithRating >= 5
-                                ? "Good progress. Identify what usually discourages you and make a plan to stay persistent."
-                                : "This is a call to strengthen your prayer life. Ask God for grace to endure and not faint."}
-                            </p>
-                            </div>
-
-                            {/* Personal Decisions */}
-                            <div
-                            className={`${
-                                darkMode ? "bg-gray-700" : "bg-white border border-gray-200"
-                            } p-6 rounded-lg`}
-                            >
-                            <h4 className="text-xl font-semibold mb-4">
-                                Personal Decisions: Pray Until Something Happens
-                            </h4>
-
-                            <div className="flex flex-col sm:flex-row gap-2 mb-4">
-                                <input
-                                type="text"
-                                value={commitmentInput}
-                                onChange={(e) => setCommitmentInput(e.target.value)}
-                                placeholder="Write a personal decision (e.g., pray daily, avoid discouragement, wait on God, pray through obstacles, seek God’s will)..."
-                                className={`flex-1 px-4 py-2 rounded-lg border ${
-                                    darkMode ? "bg-gray-800 border-gray-600" : "bg-white border-gray-300"
-                                }`}
-                                onKeyPress={(e) => e.key === "Enter" && addCommitment()}
-                                />
-                                <button
-                                onClick={addCommitment}
-                                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition flex items-center justify-center gap-2 w-full sm:w-auto"
-                                >
-                                <Save size={16} /> Save
-                                </button>
-                            </div>
-
-                            <div className="space-y-2">
-                                {commitments.map((commitment, idx) => (
-                                <div
-                                    key={idx}
-                                    className={`${darkMode ? "bg-gray-800" : "bg-gray-50"} p-3 rounded-lg flex items-start gap-3`}
-                                >
-                                    <CheckCircle className="text-green-600 mt-1" size={20} />
-                                    <div className="flex-1">
-                                    <p>{commitment.text}</p>
-                                    <p className="text-xs opacity-70 mt-1">{commitment.date}</p>
-                                    </div>
-                                </div>
-                                ))}
-                            </div>
-
-                            <p className="mt-4 text-sm italic text-gray-500">
-                                Elijah did not stop at the revelation—he prayed until the rain came (1 Kings
-                                18:41–46). Use this section to write clear and practical decisions that help you
-                                keep praying, overcome discouragement, and persist until your answer comes (Matt.
-                                7:7–8; 1 John 5:14).
-                            </p>
-                            </div>
-                            </div>
-                        )}
+                       
 
 
 
@@ -1695,137 +1562,7 @@ const SundaySchoolApp = () => {
 
 
 
-                        {activeTab === "quiz" && (
-                            <div className="space-y-6">
-                                <div className="flex justify-between items-center mb-4">
-                                    <h3 className="text-2xl font-bold">
-                                        Speed Quiz Challenge
-                                    </h3>
-                                    {quizActive && (
-                                        <div className="flex gap-4 items-center">
-                                            <div className="flex items-center gap-2">
-                                                <Clock className="text-blue-600" />
-                                                <span className="text-xl font-bold">
-                                                    {timeLeft}s
-                                                </span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <Award className="text-yellow-600" />
-                                                <span className="text-xl font-bold">
-                                                    {score}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                                {!quizActive && !showResults && (
-                                    <div className="text-center py-12">
-                                        <Award
-                                            size={64}
-                                            className="mx-auto mb-4 text-yellow-600"
-                                        />
-                                        <h4 className="text-2xl font-bold mb-4">
-                                            Ready to Test Your Knowledge?
-                                        </h4>
-                                        <p className="mb-6 text-lg">
-                                            Answer quickly for bonus points!
-                                        </p>
-                                        <button
-                                            onClick={startQuiz}
-                                            className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-xl font-semibold transition transform hover:scale-105"
-                                        >
-                                            Start Quiz
-                                        </button>
-                                    </div>
-                                )}
-                                {quizActive && !showResults && (
-                                    <div>
-                                        <div
-                                            className={`${
-                                                darkMode
-                                                    ? "bg-gray-700"
-                                                    : "bg-blue-50"
-                                            } p-6 rounded-lg mb-6`}
-                                        >
-                                            <h4 className="text-xl font-semibold mb-4">
-                                                Question {currentQuestion + 1}{" "}
-                                                of {quizQuestions.length}
-                                            </h4>
-                                            <p className="text-lg mb-6">
-                                                {
-                                                    quizQuestions[
-                                                        currentQuestion
-                                                    ].q
-                                                }
-                                            </p>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                {quizQuestions[
-                                                    currentQuestion
-                                                ].a.map((answer, idx) => (
-                                                    <button
-                                                        key={idx}
-                                                        onClick={() =>
-                                                            checkAnswer(idx)
-                                                        }
-                                                        className={`${
-                                                            darkMode
-                                                                ? "bg-gray-800 hover:bg-gray-900"
-                                                                : "bg-white hover:bg-gray-50"
-                                                        } p-4 rounded-lg border-2 border-blue-600 transition transform hover:scale-105 text-left`}
-                                                    >
-                                                        <span className="font-bold text-blue-600 mr-2">
-                                                            {String.fromCharCode(
-                                                                65 + idx
-                                                            )}
-                                                            .
-                                                        </span>
-                                                        {answer}
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
-                                {showResults && (
-                                    <div className="text-center space-y-6">
-                                        <Award
-                                            size={80}
-                                            className="mx-auto text-yellow-600"
-                                        />
-                                        <h4 className="text-3xl font-bold">
-                                            Quiz Complete!
-                                        </h4>
-                                        <div
-                                            className={`${
-                                                darkMode
-                                                    ? "bg-gray-700"
-                                                    : "bg-gradient-to-r from-blue-50 to-indigo-50"
-                                            } p-8 rounded-lg`}
-                                        >
-                                            <p className="text-5xl font-bold text-blue-600 mb-2">
-                                                {score}
-                                            </p>
-                                            <p className="text-xl">
-                                                Final Score
-                                            </p>
-                                            <p className="mt-4 text-lg">
-                                                {score >= 100
-                                                    ? "Outstanding! Excellent knowledge!"
-                                                    : score >= 60
-                                                    ? "Great work! Keep studying!"
-                                                    : "Good effort! Review the lesson."}
-                                            </p>
-                                        </div>
-                                        <button
-                                            onClick={startQuiz}
-                                            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition"
-                                        >
-                                            Try Again
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                        )}
+                       
                         {activeTab === "prayer" && (
                             <div className="space-y-4">
                                 {editingContent === "prayer" && (

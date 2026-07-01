@@ -49,175 +49,78 @@ type BibleVersions = {
 type ScriptureDB = Record<string, BibleVersions>;
 
 const initialScriptureDB: ScriptureDB = {
-  "Genesis 1:1": {
-    "KJV": "In the beginning God created the heaven and the earth.",
-    "NKJV": "In the beginning God created the heavens and the earth.",
-    "NIV": "In the beginning God created the heavens and the earth.",
-    "ESV": "In the beginning, God created the heavens and the earth.",
-    "AMP": "In the beginning God (Elohim) created the heavens and the earth.",
-    "NLT": "In the beginning God created the heavens and the earth.",
+  "2 Timothy 3:5": {
+    "KJV": "5 Having a form of godliness, but denying the power thereof: from such turn away.",
+    "NKJV": "5 having a form of godliness but denying its power. And from such people turn away!",
+    "NIV": "5 having a form of godliness but denying its power. Have nothing to do with such people.",
+    "ESV": "5 having the appearance of godliness, but denying its power. Avoid such people.",
+    "AMP": "5 holding to a form of [outward] godliness (religion), although they have denied its power [for their conduct nullifies their claim of faith]. Avoid such people and keep far away from them.",
+    "NLT": "5 They will act religious, but they will reject the power that could make them godly. Stay away from people like that!"
   },
-  "James 1:17": {
-    "KJV": "Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.",
-    "NKJV": "Every good gift and every perfect gift is from above, and comes down from the Father of lights, with whom there is no variation or shadow of turning.",
-    "NIV": "Every good and perfect gift is from above, coming down from the Father of the heavenly lights, who does not change like shifting shadows.",
-    "ESV": "Every good gift and every perfect gift is from above, coming down from the Father of lights, with whom there is no variation or shadow due to change.",
-    "AMP": "Every good thing given and every perfect gift is from above, coming down from the Father of lights, with whom there is no variation or shifting shadow.",
-    "NLT": "Whatever is good and perfect is a gift coming down to us from God our Father, who created all the lights in the heavens. He never changes or casts a shifting shadow.",
+  "Ephesians 4:17-18": {
+    "KJV": "17 This I say therefore, and testify in the Lord, that ye henceforth walk not as other Gentiles walk, in the vanity of their mind, 18 Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart:",
+    "NKJV": "17 This I say, therefore, and testify in the Lord, that you should no longer walk as the rest of the Gentiles walk, in the futility of their mind, 18 having their understanding darkened, being alienated from the life of God because of the ignorance that is in them, because of the blindness of their heart;",
+    "NIV": "17 So I tell you this, and insist on it in the Lord, that you must no longer live as the Gentiles do, in the futility of their thinking. 18 They are darkened in their understanding and separated from the life of God because of the ignorance that is in them due to the hardening of their hearts.",
+    "ESV": "17 Now this I say and testify in the Lord, that you must no longer walk as the Gentiles do, in the futility of their minds. 18 They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart.",
+    "AMP": "17 So I say this, and affirm in the Lord, that you must no longer walk as the Gentiles walk, in the futility of their minds [and in the foolishness and emptiness of their souls], 18 for their [moral] understanding is darkened and their reasoning is beclouded; [they are] alienated and estranged from the life of God [with no share in it] because of the [willful] ignorance that is deep-seated in them, because of the hardness and insensitivity of their hearts.",
+    "NLT": "17 With the Lord’s authority I say this: Live no longer as the Gentiles do, for they are hopelessly confused. 18 Their minds are full of darkness; they wander far from the life God gives because they have closed their minds and hardened their hearts against him."
   },
-  "Psalm 132:15": {
-        "KJV": "I will abundantly bless her provision: I will satisfy her poor with bread.",
-        "NKJV": "I will abundantly bless her provision; I will satisfy her poor with bread.",
-        "NIV": "I will bless her with abundant provisions; her poor I will satisfy with food.",
-        "ESV": "I will abundantly bless her provisions; I will satisfy her poor with bread.",
-        "AMP": "I will abundantly bless her provisions; I will satisfy her poor with bread.",
-        "NLT": "I will bless this city and make it prosperous; I will satisfy its poor with food."
+  "Romans 12:1": {
+    "KJV": "1 I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.",
+    "NKJV": "1 I beseech you therefore, brethren, by the mercies of God, that you present your bodies a living sacrifice, holy, acceptable to God, which is your reasonable service.",
+    "NIV": "1 Therefore, I urge you, brothers and sisters, in view of God’s mercy, to offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship.",
+    "ESV": "1 I appeal to you therefore, brothers, by the mercies of God, to present your bodies as a living sacrifice, holy and acceptable to God, which is your spiritual worship.",
+    "AMP": "1 Therefore I urge you, brothers and sisters, by the mercies of God, to present your bodies [dedicating all of yourselves, set apart] as a living sacrifice, holy and well-pleasing to God, which is your rational (logical, intelligent) act of worship.",
+    "NLT": "1 And so, dear brothers and sisters, I plead with you to give your bodies to God because of all he has done for you. Let them be a living and holy sacrifice—the kind he will find acceptable. This is truly the way to worship him."
   },
-  "John 8:32": {
-    "KJV": "And ye shall know the truth, and the truth shall make you free.",
-    "NKJV": "And you shall know the truth, and the truth shall make you free.",
-    "NIV": "Then you will know the truth, and the truth will set you free.",
-    "ESV": "and you will know the truth, and the truth will set you free.",
-    "AMP": "And you will know the truth [regarding Salvation], and the truth will set you free [from the penalty of sin].",
-    "NLT": "And you will know the truth, and the truth will set you free.",
+  "Matthew 23:13": {
+    "KJV": "13 But woe unto you, scribes and Pharisees, hypocrites! for ye shut up the kingdom of heaven against men: for ye neither go in yourselves, neither suffer ye them that are entering to go in.",
+    "NKJV": "13 “But woe to you, scribes and Pharisees, hypocrites! For you shut up the kingdom of heaven against men; for you neither go in yourselves, nor do you allow those who are entering to go in.",
+    "NIV": "13 “Woe to you, teachers of the law and Pharisees, hypocrites! You shut the door of the kingdom of heaven in people’s faces. You yourselves do not enter, nor will you let those enter who are trying to.",
+    "ESV": "13 “But woe to you, scribes and Pharisees, hypocrites! For you shut the kingdom of heaven in people's faces. For you neither enter yourselves nor allow those who would enter to go in.",
+    "AMP": "13 “But woe to you, [self-righteous] scribes and Pharisees, hypocrites, because you shut the kingdom of heaven in front of people; for you do not enter yourselves, nor do you allow those who are entering to go in.",
+    "NLT": "13 “What sorrow awaits you teachers of religious law and you Pharisees. Hypocrites! For you shut the door of the Kingdom of Heaven in people’s faces. You won’t go in yourselves, and you don’t let others enter either."
   },
-  "Matthew 15:29-37": {
-    "KJV": "29 And Jesus departed from thence, and came nigh unto the sea of Galilee; and went up into a mountain, and sat down there. 30 And great multitudes came unto him, having with them those that were lame, blind, dumb, maimed, and many others, and cast them down at Jesus' feet; and he healed them: 31 Insomuch that the multitude wondered, when they saw the dumb to speak, the maimed to be whole, the lame to walk, and the blind to see: and they glorified the God of Israel. 32 Then Jesus called his disciples unto him, and said, I have compassion on the multitude, because they continue with me now three days, and have nothing to eat: and I will not send them away fasting, lest they faint in the way. 33 And his disciples say unto him, Whence should we have so much bread in the wilderness, as to fill so great a multitude? 34 And Jesus saith unto them, How many loaves have ye? And they said, Seven, and a few little fishes. 35 And he commanded the multitude to sit down on the ground. 36 And he took the seven loaves and the fishes, and gave thanks, and brake them, and gave to his disciples, and the disciples to the multitude. 37 And they did all eat, and were filled: and they took up of the broken meat that was left seven baskets full.",
-    "NKJV": "29 Jesus departed from there, skirted the Sea of Galilee, and went up on the mountain and sat down there. 30 Then great multitudes came to Him, having with them the lame, blind, mute, maimed, and many others; and they laid them down at Jesus' feet, and He healed them. 31 So the multitude marveled when they saw the mute speaking, the maimed made whole, the lame walking, and the blind seeing; and they glorified the God of Israel. 32 Now Jesus called His disciples to Himself and said, 'I have compassion on the multitude, because they have now continued with Me three days and have nothing to eat. And I do not want to send them away hungry, lest they faint on the way.' 33 Then His disciples said to Him, 'Where could we get enough bread in the wilderness to fill such a great multitude?' 34 Jesus said to them, 'How many loaves do you have?' And they said, 'Seven, and a few little fish.' 35 So He commanded the multitude to sit down on the ground. 36 And He took the seven loaves and the fish and gave thanks, broke them and gave them to His disciples; and the disciples gave to the multitude. 37 So they all ate and were filled, and they took up seven large baskets full of the fragments that were left.",
-    "NIV": "29 Jesus left there and went along the Sea of Galilee. Then he went up on a mountainside and sat down. 30 Great crowds came to him, bringing the lame, the blind, the crippled, the mute and many others, and laid them at his feet; and he healed them. 31 The crowd was amazed when they saw the mute speaking, the crippled made well, the lame walking and the blind seeing; and they praised the God of Israel. 32 Jesus called his disciples to him and said, 'I have compassion for these people; they have already been with me three days and have nothing to eat. I do not want to send them away hungry, or they may faint on the way.' 33 His disciples answered, 'Where could we get enough bread in this remote place to feed such a crowd?' 34 'How many loaves do you have?' Jesus asked. 'Seven,' they replied, 'and a few small fish.' 35 He told the crowd to sit down on the ground. 36 Then he took the seven loaves and the fish, and when he had given thanks, he broke them and gave them to the disciples, and they in turn to the people. 37 They all ate and were satisfied. Afterward the disciples picked up seven basketfuls of broken pieces that were left over.",
-    "ESV": "29 Jesus went on from there and walked beside the Sea of Galilee. And he went up on the mountain and sat down there. 30 And great crowds came to him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they put them at his feet, and he healed them, 31 so that the crowd wondered, when they saw the mute speaking, the crippled healthy, the lame walking, and the blind seeing. And they glorified the God of Israel. 32 Then Jesus called his disciples to him and said, 'I have compassion on the crowd because they have been with me now three days and have nothing to eat. And I am unwilling to send them away hungry, lest they faint on the way.' 33 And the disciples said to him, 'Where are we to get enough bread in such a desolate place to feed so great a crowd?' 34 And Jesus said to them, 'How many loaves do you have?' They said, 'Seven, and a few small fish.' 35 And directing the crowd to sit down on the ground, 36 he took the seven loaves and the fish, and having given thanks he broke them and gave them to the disciples, and the disciples gave them to the crowds. 37 And they all ate and were satisfied. And they took up seven baskets full of the broken pieces left over.",
-    "AMP": "29 Jesus went on from there and walked beside the Sea of Galilee. And He went up on the mountain and sat down there. 30 And great crowds came to Him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they laid them down at His feet; and He healed them. 31 So the crowd was amazed when they saw the mute speaking, the crippled restored, the lame walking, and the blind seeing; and they praised and glorified the God of Israel. 32 Then Jesus called His disciples to Him and said, 'I have compassion on the crowd, because they have been with Me now three days and have nothing to eat; and I am unwilling to send them away hungry, lest they faint [from exhaustion] on the way.' 33 The disciples said to Him, 'Where are we to get enough bread in this isolated place to feed so great a crowd?' 34 Jesus asked them, 'How many loaves [of bread] do you have?' They said, 'Seven, and a few small fish.' 35 And He directed the crowd to sit down on the ground, 36 and He took the seven loaves and the fish; and when He had given thanks, He broke them and gave them to the disciples, and the disciples [gave them] to the crowds. 37 And they all ate and were satisfied. And they picked up seven large baskets full of the broken pieces that were left over.",
-    "NLT": "29 Jesus returned to the Sea of Galilee and climbed a hill and sat down. 30 A vast crowd brought to him people who were lame, blind, crippled, those who couldn't speak, and many others. They laid them before Jesus, and he healed them all. 31 The crowd was amazed! Those who hadn't been able to speak were talking, the crippled were made well, the lame were walking, and the blind could see again. And they praised the God of Israel. 32 Then Jesus called his disciples to him and said, 'I feel sorry for these people. They have been here with me for three days, and they have nothing left to eat. I don't want to send them away hungry, or they will faint along the way.' 33 The disciples replied, 'Where would we get enough food here in the wilderness for such a huge crowd?' 34 Jesus asked, 'How much bread do you have?' 'Seven loaves,' they replied, 'and a few small fish.' 35 So Jesus told all the people to sit down on the ground. 36 Then he took the seven loaves and the fish, thanked God for them, and broke them into pieces. He gave them to the disciples, who distributed the food to the crowd. 37 They all ate as much as they wanted. Afterward, the disciples picked up seven large baskets of leftover pieces.",
+  "John 17:15": {
+    "KJV": "15 I pray not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil.",
+    "NKJV": "15 I do not pray that You should take them out of the world, but that You should keep them from the evil one.",
+    "NIV": "15 My prayer is not that you take them out of the world but that you protect them from the evil one.",
+    "ESV": "15 I do not ask that you take them out of the world, but that you keep them from the evil one.",
+    "AMP": "15 I do not ask You to take them out of the world, but to keep them and protect them from the evil one.",
+    "NLT": "15 I’m not asking you to take them out of the world, but to keep them safe from the evil one."
   },
-  "1 Peter 5:7": {
-    "KJV": "Casting all your care upon him; for he careth for you.",
-    "NKJV": "casting all your care upon Him, for He cares for you.",
-    "NIV": "Cast all your anxiety on him because he cares for you.",
-    "ESV": "casting all your anxieties on him, because he cares for you.",
-    "AMP": "casting all your anxiety [all your worries, all your concerns, once and for all] on Him, for He cares about you [with deepest affection, and watches over you very carefully].",
-    "NLT": "Give all your worries and cares to God, for he cares about you."
+  "Proverbs 4:23": {
+    "KJV": "23 Keep thy heart with all diligence; for out of it are the issues of life.",
+    "NKJV": "23 Keep your heart with all diligence, For out of it spring the issues of life.",
+    "NIV": "23 Above all else, guard your heart, for everything you do flows from it.",
+    "ESV": "23 Keep your heart with all vigilance, for from it flow the springs of life.",
+    "AMP": "23 Watch over your heart with all diligence, For from it flow the springs of life.",
+    "NLT": "23 Guard your heart above all else, for it determines the course of your life."
   },
-  "Matthew 15:30": {
-    "KJV": "And great multitudes came unto him, having with them those that were lame, blind, dumb, maimed, and many others, and cast them down at Jesus' feet; and he healed them:",
-    "NKJV": "Then great multitudes came to Him, having with them the lame, blind, mute, maimed, and many others; and they laid them down at Jesus’ feet, and He healed them.",
-    "NIV": "Great crowds came to him, bringing the lame, the blind, the crippled, the mute and many others, and laid them at his feet; and he healed them.",
-    "ESV": "And great crowds came to him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they put them at his feet, and he healed them,",
-    "AMP": "And great crowds came to Him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they laid them down at His feet; and He healed them.",
-    "NLT": "A vast crowd brought to him people who were lame, blind, crippled, those who couldn't speak, and many others. They laid them before Jesus, and he healed them all."
+  "Hosea 4:6": {
+    "KJV": "6 My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children.",
+    "NKJV": "6 My people are destroyed for lack of knowledge. Because you have rejected knowledge, I also will reject you from being priest to Me; Because you have forgotten the law of your God, I also will forget your children.",
+    "NIV": "6 my people are destroyed from lack of knowledge. “Because you have rejected knowledge, I also reject you as my priests; because you have ignored the law of your God, I also will ignore your children.",
+    "ESV": "6 My people are destroyed for lack of knowledge; because you have rejected knowledge, I reject you from being a priest to me. And since you have forgotten the law of your God, I also will forget your children.",
+    "AMP": "6 My people are destroyed for lack of knowledge. Because you [the priestly nation] have rejected knowledge, I will also reject you from being My priest. Since you have forgotten the law of your God, I will also forget your children.",
+    "NLT": "6 My people are being destroyed because they don’t know me. Since you priests refuse to know me, I refuse to recognize you as my priests. Since you have forgotten the laws of your God, I will forget to bless your children."
   },
-  "Matthew 11:28": {
-    "KJV": "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
-    "NKJV": "Come to Me, all you who labor and are heavy laden, and I will give you rest.",
-    "NIV": "Come to me, all you who are weary and burdened, and I will give you rest.",
-    "ESV": "Come to me, all who labor and are heavy laden, and I will give you rest.",
-    "AMP": "Come to Me, all who are weary and heavily burdened [by religious rituals that provide no peace], and I will give you rest [refreshing your souls with salvation].",
-    "NLT": "Then Jesus said, \"Come to me, all of you who are weary and carry heavy burdens, and I will give you rest.\""
+  "Romans 6:1": {
+    "KJV": "1 What shall we say then? Shall we continue in sin, that grace may abound?",
+    "NKJV": "1 What shall we say then? Shall we continue in sin that grace may abound?",
+    "NIV": "1 What shall we say, then? Shall we go on sinning so that grace may increase?",
+    "ESV": "1 What shall we say then? Are we to continue in sin that grace may abound?",
+    "AMP": "1 What shall we say then? Are we to continue in sin so that [God’s gift of] grace may increase and overflow?",
+    "NLT": "1 Well then, should we keep on sinning so that God can show us more and more of his wonderful grace?"
   },
-  "Matthew 15:30-31": {
-    "KJV": "30 And great multitudes came unto him, having with them those that were lame, blind, dumb, maimed, and many others, and cast them down at Jesus' feet; and he healed them: 31 Insomuch that the multitude wondered, when they saw the dumb to speak, the maimed to be whole, the lame to walk, and the blind to see: and they glorified the God of Israel.",
-    "NKJV": "30 Then great multitudes came to Him, having with them the lame, blind, mute, maimed, and many others; and they laid them down at Jesus’ feet, and He healed them. 31 So the multitude marveled when they saw the mute speaking, the maimed made whole, the lame walking, and the blind seeing; and they glorified the God of Israel.",
-    "NIV": "30 Great crowds came to him, bringing the lame, the blind, the crippled, the mute and many others, and laid them at his feet; and he healed them. 31 The crowd was amazed when they saw the mute speaking, the crippled made well, the lame walking and the blind seeing; and they praised the God of Israel.",
-    "ESV": "30 And great crowds came to him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they put them at his feet, and he healed them, 31 so that the crowd wondered, when they saw the mute speaking, the crippled healthy, the lame walking, and the blind seeing. And they glorified the God of Israel.",
-    "AMP": "30 And great crowds came to Him, bringing with them the lame, the blind, the crippled, the mute, and many others, and they laid them down at His feet; and He healed them. 31 So the crowd was amazed when they saw the mute speaking, the crippled restored, the lame walking, and the blind seeing; and they praised and glorified the God of Israel.",
-    "NLT": "30 A vast crowd brought to him people who were lame, blind, crippled, those who couldn't speak, and many others. They laid them before Jesus, and he healed them all. 31 The crowd was amazed! Those who hadn't been able to speak were talking, the crippled were made well, the lame were walking, and the blind could see again. And they praised the God of Israel."
-  },
-  "Matthew 15:31-32": {
-    "KJV": "31 Insomuch that the multitude wondered, when they saw the dumb to speak, the maimed to be whole, the lame to walk, and the blind to see: and they glorified the God of Israel. 32 Then Jesus called his disciples unto him, and said, I have compassion on the multitude, because they continue with me now three days, and have nothing to eat: and I will not send them away fasting, lest they faint in the way.",
-    "NKJV": "31 So the multitude marveled when they saw the mute speaking, the maimed made whole, the lame walking, and the blind seeing; and they glorified the God of Israel. 32 Now Jesus called His disciples to Himself and said, “I have compassion on the multitude, because they have now continued with Me three days and have nothing to eat. And I do not want to send them away hungry, lest they faint on the way.”",
-    "NIV": "31 The crowd was amazed when they saw the mute speaking, the crippled made well, the lame walking and the blind seeing; and they praised the God of Israel. 32 Jesus called his disciples to him and said, “/I have compassion for these people; they have already been with me three days and have nothing to eat. I do not want to send them away hungry, or they may faint on the way.”",  
-    "ESV": "31 so that the crowd wondered, when they saw the mute speaking, the crippled healthy, the lame walking, and the blind seeing. And they glorified the God of Israel. 32 Then Jesus called his disciples to him and said, “I have compassion on the crowd because they have been with me now three days and have nothing to eat. And I am unwilling to send them away hungry, lest they faint on the way.”",
-    "AMP": "31 So the crowd was amazed when they saw the mute speaking, the crippled restored, the lame walking, and the blind seeing; and they praised and glorified the God of Israel. 32 Then Jesus called His disciples to Him and said, “I have compassion on the crowd, because they have been with Me now three days and have nothing to eat; and I am unwilling to send them away hungry, lest they faint [from exhaustion] on the way.”",
-    "NLT": "31 The crowd was amazed! Those who hadn't been able to speak were talking, the crippled were made well, the lame were walking, and the blind could see again. And they praised the God of Israel. 32 Then Jesus called his disciples to him and said, “I feel sorry for these people. They have been here with me for three days, and they have nothing left to eat. I don't want to send them away hungry, or they will faint along the way.”",
-  },
-  "James 1:6-8": {
-    "KJV": "6 But let him ask in faith, nothing wavering. For he that wavering is like a wave of the sea driven with the wind and tossed. 7 For let not that man think that he shall receive any thing of the Lord. 8 A double minded man is unstable in all his ways.",
-    "NKJV": "6 But let him ask in faith, with no doubting, for he who doubts is like a wave of the sea driven and tossed by the wind. 7 For let not that man suppose that he will receive anything from the Lord; 8 he is a double-minded man, unstable in all his ways.",
-    "NIV": "6 But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind. 7 That person should not expect to receive anything from the Lord. 8 Such a person is double-minded and unstable in all they do.",
-    "ESV": "6 But let him ask in faith, with no doubting, for the one who doubts is like a wave of the sea that is driven and tossed by the wind. 7 For that person must not suppose that he will receive anything from the Lord; 8 he is a double-minded man, unstable in all his ways.",
-    "AMP": "6 But he must ask [for wisdom] in faith, without doubting [God’s willingness to help], for the one who doubts is like a surging wave of the sea, blown and tossed by the wind. 7 For that person must not expect that he will receive anything [at all] from the Lord, 8 being a double-minded man, unstable and restless in all his ways [in everything he thinks, feels, or does].",
-    "NLT": "6 But when you ask him, be sure that your faith is in God alone. Do not doubt, for a person with divided loyalty is as unsettled as a wave of the sea that is blown and tossed by the wind. 7 Such people should not expect to receive anything from the Lord. 8 Their loyalty is divided between God and the world, and they are unstable in everything they do."
-  },
-  "Psalm 100:4": {
-    "KJV": "Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name.",
-    "NKJV": "Enter into His gates with thanksgiving, And into His courts with praise. Be thankful to Him, and bless His name.",
-    "NIV": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.",
-    "ESV": "Enter his gates with thanksgiving, and his courts with praise! Give thanks to him; bless his name!",
-    "AMP": "Enter His gates with a song of thanksgiving And His courts with praise. Be thankful to Him, bless and praise His name.",
-    "NLT": "Enter his gates with thanksgiving; go into his courts with praise. Give thanks to him and praise his name."
-  },
-  "Psalm 22:3": {
-    "KJV": "But thou art holy, O thou that inhabitest the praises of Israel.",
-    "NKJV": "But You are holy, Enthroned in the praises of Israel.",
-    "NIV": "Yet you are enthroned as the Holy One; you are the one Israel praises.",
-    "ESV": "Yet you are holy, enthroned on the praises of Israel.",
-    "AMP": "Yet You are holy, O You who are enthroned upon the praises of Israel.",
-    "NLT": "Yet you are holy, enthroned on the praises of Israel."
-  },
-  "Psalm 16:11": {
-    "KJV": "Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore.",
-    "NKJV": "You will show me the path of life; In Your presence is fullness of joy; At Your right hand are pleasures forevermore.",
-    "NIV": "You make known to me the path of life; you will fill me with joy in your presence, with eternal pleasures at your right hand.",
-    "ESV": "You make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore.",
-    "AMP": "You will make known to me the path of life; In Your presence is fullness of joy; In Your right hand there are pleasures forevermore.",
-    "NLT": "You will show me the way of life, granting me the joy of your presence and the pleasures of living with you forever."
-  },
-  "Matthew 15:34-36": {
-    "KJV": "34 And Jesus saith unto them, How many loaves have ye? And they said, Seven, and a few little fishes. 35 And he commanded the multitude to sit down on the ground. 36 And he took the seven loaves and the fishes, and gave thanks, and brake them, and gave to his disciples, and the disciples to the multitude.",
-    "NKJV": "34 Jesus said to them, 'How many loaves do you have?' They said, 'Seven, and a few small fish.' 35 So He commanded the multitude to sit down on the ground. 36 And He took the seven loaves and the fish and gave thanks, broke them and gave them to His disciples; and the disciples gave them to the multitude.",
-    "NIV": "34 'How many loaves do you have?' Jesus asked. 'Seven,' they replied, 'and a few small fish.' 35 He told the crowd to sit down on the ground. 36 Then he took the seven loaves and the fish, and when he had given thanks, he broke them and gave them to the disciples, and they in turn to the people.",
-    "ESV": "34 And Jesus said to them, 'How many loaves do you have?' They said, 'Seven, and a few small fish.' 35 And directing the crowd to sit down on the ground, 36 he took the seven loaves and the fish, and having given thanks he broke them and gave them to the disciples, and the disciples gave them to the crowds.",
-    "AMP": "34 Jesus asked them, 'How many loaves [of bread] do you have?' They said, 'Seven, and a few small fish.' 35 And He directed the crowd to sit down on the ground, 36 and He took the seven loaves and the fish; and when He had given thanks, He broke them and gave them to the disciples, and the disciples [gave them] to the crowds.",
-    "NLT": "34 Jesus asked, 'How much bread do you have?' 'Seven loaves,' they replied, 'and a few small fish.' 35 So Jesus told all the people to sit down on the ground. 36 Then he took the seven loaves and the fish, thanked God for them, and broke them into pieces. He gave them to the disciples, who distributed the food to the crowd."
-  },
-  "Luke 6:38": {
-    "KJV": "Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom. For with the same measure that ye mete withal it shall be measured to you again.",
-    "NKJV": "Give, and it will be given to you: good measure, pressed down, shaken together, and running over will be put into your bosom. For with the same measure that you use, it will be measured back to you.",
-    "NIV": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you.",
-    "ESV": "give, and it will be given to you. Good measure, pressed down, shaken together, running over, will be put into your lap. For with the measure you use it will be measured back to you.",
-    "AMP": "Give, and it will be given to you. A good measure, pressed down, shaken together, running over, will they pour into the lap of your robe. For by your standard of measure [that is, the measure you use when you confer benefits on others] it will be measured to you in return.",
-    "NLT": "Give, and you will receive. Your gift will return to you in full—pressed down, shaken together to make room for more, running over, and poured into your lap. The amount you give will determine the amount you get back."
-  },
-  "2 Corinthians 9:6-8": {
-    "KJV": "6 But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully. 7 Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver. 8 And God is able to make all grace abound toward you; that ye, always having all sufficiency in all things, may abound to every good work:",
-    "NKJV": "6 But this I say: He who sows sparingly will also reap sparingly, and he who sows bountifully will also reap bountifully. 7 So let each one give as he purposes in his heart, not grudgingly or of necessity; for God loves a cheerful giver. 8 And God is able to make all grace abound toward you, that you, always having all sufficiency in all things, may have an abundance for every good work.",
-    "NIV": "6 Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows bountifully will also reap bountifully. 7 Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver. 8 And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work.",
-    "ESV": "6 The point is this: whoever sows sparingly will also reap sparingly, and whoever sows bountifully will also reap bountifully. 7 Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver. 8 And God is able to make all grace abound to you, so that having all sufficiency in all things at all times, you may abound in every good work.",
-    "AMP": "6 Now [remember] this: he who sows sparingly will also reap sparingly, and he who sows generously will also reap generously. 7 Let each one give [thoughtfully and with purpose] just as he has decided in his heart, not grudgingly or under compulsion, for God loves a cheerful giver [and delights in the one whose heart is in his gift]. 8 And God is able to make all grace [every favor and earthly blessing] come in abundance to you, so that you may always [under all circumstances, regardless of the need] have complete sufficiency in everything [being completely self-sufficient in Him], and have an abundance for every good work and act of charity.",
-    "NLT": "6 Remember this—a farmer who plants only a few seeds will get a small crop. But the one who plants generously will get a generous crop. 7 You must each decide in your heart how much to give. And don’t give reluctantly or in response to pressure. “For God loves a person who gives cheerfully.” 8 And God will generously provide all you need. Then you will always have everything you need and plenty left over to share with others."
-  },
-  "Deuteronomy 8:18": {
-    "KJV": "But thou shalt remember the LORD thy God: for it is he that giveth thee power to get wealth, that he may establish his covenant which he sware unto thy fathers, as it is this day.",
-    "NKJV": "And you shall remember the LORD your God, for it is He who gives you power to get wealth, that He may establish His covenant which He swore to your fathers, as it is this day.",
-    "NIV": "But remember the LORD your God, for it is he who gives you the ability to produce wealth, and so confirms his covenant, which he swore to your ancestors, as it is today.",
-    "ESV": "You shall remember the LORD your God, for it is he who gives you power to get wealth, that he may confirm his covenant that he swore to your fathers, as it is this day.",
-    "AMP": "But you shall remember [with profound respect] the LORD your God, for it is He who is giving you power to make wealth, that He may confirm His covenant which He swore to your fathers, as it is this day.",
-    "NLT": "Remember the LORD your God. He is the one who gives you power to be successful, in order to fulfill the covenant he confirmed to your ancestors with an oath, as he did today."
-  },
-  "Matthew 15:35": {
-    "KJV": "And he commanded the multitude to sit down on the ground.",
-    "NKJV": "So He commanded the multitude to sit down on the ground.",
-    "NIV": "He told the crowd to sit down on the ground.",
-    "ESV": "And directing the crowd to sit down on the ground,",
-    "AMP": "And He directed the crowd to sit down on the ground,",
-    "NLT": "So Jesus told all the people to sit down on the ground."
-  },
-  "Joshua 1:7-8": {
-    "KJV": "7 Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left, that thou mayest prosper whithersoever thou goest. 8 This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.",
-    "NKJV": "7 Only be strong and very courageous, that you may observe to do according to all the law which Moses My servant commanded you; do not turn from it to the right hand or to the left, that you may prosper wherever you go. 8 This Book of the Law shall not depart from your mouth, but you shall meditate in it day and night, that you may observe to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success.",
-    "NIV": "7 'Be strong and very courageous. Be careful to obey all the law my servant Moses gave you; do not turn from it to the right or to the left, that you may be successful wherever you go. 8 Keep this Book of the Law always on your lips; meditate on it day and night, so that you may be careful to do everything written in it. Then you will be prosperous and successful.'",
-    "ESV": "7 Only be strong and very courageous, being careful to do according to all the law that Moses my servant commanded you. Do not turn from it to the right hand or to the left, that you may have good success wherever you go. 8 This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success.",
-    "AMP": "7 Only be strong and very courageous; be careful to do [everything] in accordance with the entire law which Moses My servant commanded you; do not turn from it to the right or to the left, so that you may prosper and be successful wherever you go. 8 This Book of the Law shall not depart from your mouth, but you shall read [and meditate on] it day and night, so that you may be careful to do [everything] in accordance with all that is written in it; for then you will make your way prosperous, and then you will be successful.",
-    "NLT": "7 Be strong and very courageous. Be careful to obey all the instructions Moses gave you. Do not deviate from them, turning either to the right or to the left. Then you will be successful in everything you do. 8 Study this Book of Instruction continually. Meditate on it day and night so you will be sure to obey everything written in it. Only then will you prosper and succeed in all you do."
-  },
-  "Hebrews 13:8": {
-    "KJV": "Jesus Christ the same yesterday, and to day, and for ever.",
-    "NKJV": "Jesus Christ is the same yesterday, today, and forever.",
-    "NIV": "Jesus Christ is the same yesterday and today and forever.",
-    "ESV": "Jesus Christ is the same yesterday and today and forever.",
-    "AMP": "Jesus Christ is the same [yesterday, today, and forever].",
-    "NLT": "Jesus Christ is the same yesterday, today, and forever."
-  },
-
+  "Matthew 5:16": {
+    "KJV": "16 Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.",
+    "NKJV": "16 Let your light so shine before men, that they may see your good works and glorify your Father in heaven.",
+    "NIV": "16 In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven.",
+    "ESV": "16 In the same way, let your light shine before others, so that they may see your good works and give glory to your Father who is in heaven.",
+    "AMP": "16 Let your light shine before men in such a way that they may see your good deeds and moral excellence, and [recognize and honor and] glorify your Father who is in heaven.",
+    "NLT": "16 In the same way, let your good deeds shine out for all to see, so that everyone will praise your heavenly Father."
+  }
 };
 
 
@@ -251,7 +154,11 @@ const SundaySchoolApp = () => {
     
     const [editingContent, setEditingContent] = useState<string | null>(null);
 
-    type SubPoint = { title: string; content: string; scripture?: string };
+    type SubPoint = { 
+        title: string; 
+        content: string; 
+        scripture?: string
+     };
     type LessonPoint = {
         title: string;
         content: string;
@@ -259,111 +166,98 @@ const SundaySchoolApp = () => {
         subPoints: SubPoint[];
     };
     type ContentData = {
-        lessonDate: string;
-        lessonTitle: string;
-        memoryVerse: string;
-        memoryVerseRef: string;
-        introduction: string;
-        introScriptures: string[];
-        lessonIntroScriptures: string[];
-        aims: string;
-        objectives: string;
-        lessonIntro: string;
-        lessonPoints: LessonPoint[];
-        conclusion: string;
-        conclusionScriptures: string[];
-        prayerPoints: string[];
-    };
-    
+    lessonDate: string;
+    lessonTitle: string;
+    memoryVerse: string;
+    memoryVerseRef: string;
+    introduction: string;
+    introScriptures: string[];
+    lessonIntroScriptures: string[];
+    aims: string;
+    objectives: string;
+    objectiveScriptures?: string[]; // Added optionally to prevent breaking existing data
+    lessonIntro: string;
+    lessonPoints: LessonPoint[];
+    conclusion: string;
+    conclusionScriptures: string[];
+    prayerPoints: string[];
+};
 
 const [contentData, setContentData] = useState<ContentData>({
-    lessonDate: "June 14, 2026",
-    lessonTitle: "PRINCIPLES OF DIVINE PROVISION",
+    lessonDate: "July 5, 2026", 
+    lessonTitle: "LIVING AS A CHILD OF GOD",
 
     memoryVerse:
-        "I will abundantly bless her provision; I will satisfy her poor with bread. - Ps. 132:15",
-    memoryVerseRef: "Psalm 132:15",
+        "Having a form of godliness, but denying the power thereof: from such, turn away. - 2 Tim. 3:5",
+    memoryVerseRef: "2 Timothy 3:5", 
 
-    introScriptures: ["Genesis 1:1", "James 1:17", "John 8:32"],
-    lessonIntroScriptures: ["Matthew 15:29-37"],
+    introScriptures: ["Ephesians 4:17-18"],
 
     introduction:
-        "God is known to be the creator of all things and the One from whom every good and perfect gift comes. Gen 1:1; James 1:17. Owing to these facts, many people have sought him for provisions without having their desires met. The ultimate reason is because they neither understood the principles bordering around provisions nor walked in it. Man is a product of what he knows. John 8:32.",
+        "Most of us children of God have come on board the kingdom of God from a gentile background whose attributes were opposed to God's way of life. Since we have become Christians we ought to live the life which is contrary to gentile life of ungodliness - Rom 12:1.",
 
     aims:
-        "To tailor the believer to the knowledge of how to receive God's provisions.",
+        "To discourage the Christian brethren from living a life which is contrary to their profession.",
 
+    // objectives:
+        // "That you may be the light that attracts instead of darkness that will repel people from coming to Jesus - Matt 23:13.",
+    // Add this inside your useState object alongside your objective text
     objectives:
-        "To get the believer to the place of endowment with the rich provisions of God.",
-
+        "That you may be the light that attracts instead of darkness that will repel people from coming to Jesus - Matt 23:13.",
+    objectiveScriptures: ["Matthew 23:13"],
+    
     lessonIntro:
-        "Jesus returned to Galilee to better the lot of His people and many took advantage of it and came to Him. They also came with their burdens which were lifted from them and had supernatural provision of food. This entire scene is a revelation of the relationship between man and God with principles that activates Divine provisions. Let us deduce the principles provided from the picture that is presented in the passage.",
-
+        "Jesus prayed the Father not to take his children away from the world but that he may keep them. As long as you remain in the world, your former lifestyle may appeal to you but know that it is against God and you cannot therefore live as an unbeliever. If the thing that makes an unbeliever remains as one does exist in you, it will make you live as one. Let us consider the scriptures in the text.",
+        
+    lessonIntroScriptures: ["John 17:15", "Ephesians 4:17-18"],
+    
     lessonPoints: [
         {
-            title: "KNOWLEDGE OF GOD'S CARE:",
+            title: "1. THE BLINDNESS OF THE HEART",
             content:
-                "The first principle of divine provision is to realize that God cares for you and what you're going through. 1 Pet 5:7. These people came to Jesus with their heavy burdens because they knew that He will help them or else they would have come alone because of uncertainty. Verse 30",
-            scriptures: ["1 Peter 5:7", "Matthew 15:30"],
+                "The heart is the key that determines the life of a man and if it is blind, then the man is bound to stumble and fall. Heart blindness causes hardness of the heart because it doesn't know what decision it is making and mostly it does the wrong ones. Certain things are responsible for blindness of the heart.",
+            scriptures: ["Proverbs 4:23"],
+            subPoints: [
+                { title: "(A)", content: "Refusal to surrender to Jesus Christ" },
+                { title: "(B)", content: "Feeling of self-sufficiency" },
+                { title: "(C)", content: "Pride" },
+                { title: "(D)", content: "Arrogance" }
+            ],
+        },
+        {
+            title: "2. IGNORANCE",
+            content:
+                "The Bible says that people are destroyed for lack of knowledge. Ignorance is a deadly weapon of Satan to destroy its victims. Heart blindness leads to ignorance. Ignorance is the factor responsible for Satan taking advantage of man to darken his understanding, and separation from the life of God. Ignorance produces:",
+            scriptures: ["Hosea 4:6"],
             subPoints: [],
         },
         {
-            title: "RECIPIENTS HAVE TO COME TO JESUS:",
+            title: "A. VANITY OF THE MIND",
             content:
-                "If you want to receive divine provisions then you have to come to Jesus. Matt 11:28. Don't say He knows what I'm going through so let him help if he's willing. These people had the need and thus came to him without waiting for others to stand in for them. Verse 30.",
-            scriptures: ["Matthew 11:28", "Matthew 15:30"],
+                "It means fruitlessness - mind malfunction. The mind becomes strange to what is good and beneficial.",
+            scriptures: [],
             subPoints: [],
         },
         {
-            title: "CASTING NEEDS AT JESUS' FEET:",
+            title: "B. UNDERSTANDING DARKENED",
             content:
-                "This is the only way to receive his attention and help. He took care of every case that was laid at his feet. Verse 30-31, 1 Pet 5:7. Be sure that Jesus is in the place where you're taking your burdens to and also that you're not leaving them at the feet of church.",
-            scriptures: ["Matthew 15:30-31", "1 Peter 5:7"],
-            subPoints: [],
-        },
-        {
-            title: "TARRY WITH JESUS:",
-            content:
-                "One of the principles is to remain with Jesus wherever He is as these people did. They did not leave after one miracle service but stayed beyond. Verse 31 - 32. Most people who seek God today can't receive provisions because they are so unstable bodily and in heart. James 1:6-8.",
-            scriptures: ["Matthew 15:31-32", "James 1:6-8"],
-            subPoints: [],
-        },
-        {
-            title: "PRAISING THE GOD OF ISRAEL:",
-            content:
-                "Thanksgiving brings man to the entrance of Heaven but Praises ushers him to the very throne of God. Ps 100:4. They praised the God of Israel but which one are you praising. Be sure that you're praising God and that the praises are to the true God because he inhabits it (Ps 22:3) and in his presence there is fullness of joy. Ps 16:11.",
-            scriptures: ["Psalm 100:4", "Psalm 22:3", "Psalm 16:11"],
-            subPoints: [],
-        },
-        {
-            title: "GIVING TO THE RIGHT SOURCE:",
-            content:
-                "Sowing remains the only way of determining harvest but prayer only creates an atmosphere for sowing and reminding God to facilitate the harvest. The people gave their substance and received abundantly to overflowing. Verse 34 - 36; Luke 6:38; 2 Cor 9:6-8; Deut 8:18.",
-            scriptures: ["Matthew 15:34-36", "Luke 6:38", "2 Corinthians 9:6-8", "Deuteronomy 8:18"],
-            subPoints: [],
-        },
-        {
-            title: "OBEYING THE COMMANDMENTS OF GOD:",
-            content:
-                "Jesus asked them to sit down and they obeyed. Verse 35. This is not applicable to many of us as we daily violate his commandments. See Joshua 1:7-8.",
-            scriptures: ["Matthew 15:35", "Joshua 1:7-8"],
+                "Gentiles have so yielded to Satan and the systems of the world which originated from Satan. Satan is darkness and would steal your understanding by blocking it lest you be free from his control, knowing the truth will free a man, so Satan would do anything to stop this. If you don't appreciate the things of God then call for help because Satan has enveloped your understanding with darkness.",
+            scriptures: [],
             subPoints: [],
         },
     ],
 
     conclusion:
-        "The principles are still the same today and if applied will give unequal divine provisions. Heb 13:8.",
+        "By your fruits, you can tell whether you are still living as a gentile (unbeliever). You cannot continue to sin that grace may abound - Rom 6:1. Live as a child of God. You profess that men may glorify God - Matt 5:16.",
 
-    conclusionScriptures: ["Hebrews 13:8"],
+    conclusionScriptures: ["Romans 6:1", "Matthew 5:16"],
 
     prayerPoints: [
-        "Father, clear away all uncertainty and grant me a deep revelation and knowledge of Your personal care for my life.",
-        "Lord, give me the spiritual stability to tarry in Your presence without wavering, even when answers take time.",
-        "Father, give me an obedient heart to completely follow Your instructions so I can walk in the fullness of Your divine provision.",
+        "Lord, I throw off every residual trace of the old lifestyle and fully surrender my heart to be illuminated by Your Holy Spirit!",
+        "Father, destroy every root of pride, arrogance, and self-sufficiency in me; let my life be a shining light that draws others closer to Jesus!",
+        "Oh Lord, break every stronghold of ignorance or spiritual blindness over my mind, and give me a clear understanding to walk daily as Your true child!"
     ],
 });
-
-
 
 
 
@@ -597,7 +491,7 @@ const [contentData, setContentData] = useState<ContentData>({
 
 
         if (appLoading) {
-    const animatedText = "June is my Month of Divine Mercy - Eccl. 33:17-19".split("");
+    const animatedText = "My Month of Complelling Favour Genesis 39:1-7, Neh. 2:1-8".split("");
 
     return (
         <div className="fixed inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center z-50">
@@ -704,7 +598,7 @@ const [contentData, setContentData] = useState<ContentData>({
                             Sunday School Lesson
                         </h1>
                         <p className="text-xl opacity-80">
-                            PRINCIPLES OF DIVINE PROVISION
+                            Living As A Child of God
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -905,222 +799,254 @@ const [contentData, setContentData] = useState<ContentData>({
                 )}
                 {!loading && (
                     <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-6 md:p-8">
-                        {activeTab === "intro" && (
-                            <div className="space-y-6">
-                                {editingContent === "intro" && (
-                                    <div className="bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-400 rounded-lg p-3 mb-4 flex items-center justify-between">
-                                        <span className="flex items-center gap-2">
-                                            <Edit2
-                                                size={16}
-                                                className="text-yellow-700"
-                                            />
-                                            <span className="text-yellow-700 dark:text-yellow-400 font-semibold">
-                                                Edit Mode Active
-                                            </span>
-                                        </span>
-                                        <button
-                                            onClick={() =>
-                                                setEditingContent(null)
-                                            }
-                                            className="bg-yellow-600 hover:bg-yellow-700 text-white px-3 py-1 rounded text-sm"
-                                        >
-                                            Done Editing
-                                        </button>
-                                    </div>
-                                )}
-                                <div
-                                    className={`${
-                                        darkMode
-                                            ? "bg-blue-900/30"
-                                            : "bg-blue-50"
-                                    } p-6 rounded-lg border-l-4 border-blue-600`}
-                                >
-                                    <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                                        <BookOpen className="text-blue-600" />{" "}
-                                        Memory Verse
-                                    </h3>
-                                    {editingContent === "intro" ? (
-                                        <textarea
-                                            value={contentData.memoryVerse}
-                                            onChange={(e) =>
-                                                updateContent(
-                                                    "memoryVerse",
-                                                    e.target.value
-                                                )
-                                            }
-                                            className={`w-full px-4 py-2 rounded-lg border text-xl italic mb-4 ${
-                                                darkMode
-                                                    ? "bg-gray-800 border-gray-600"
-                                                    : "bg-white border-gray-300"
-                                            }`}
-                                            rows={2}
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    {activeTab === "intro" && (
+                        <div className="space-y-6">
+                            {editingContent === "intro" && (
+                                <div className="bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-400 rounded-lg p-3 mb-4 flex items-center justify-between">
+                                    <span className="flex items-center gap-2">
+                                        <Edit2
+                                            size={16}
+                                            className="text-yellow-700"
                                         />
-                                    ) : (
-                                        <blockquote className="text-xl italic mb-4">
-                                            "{contentData.memoryVerse}"
-                                        </blockquote>
-                                    )}
+                                        <span className="text-yellow-700 dark:text-yellow-400 font-semibold">
+                                            Edit Mode Active
+                                        </span>
+                                    </span>
+                                    <button
+                                        onClick={() =>
+                                            setEditingContent(null)
+                                        }
+                                        className="bg-yellow-600 hover:bg-yellow-700 text-white px-3 py-1 rounded text-sm"
+                                    >
+                                        Done Editing
+                                    </button>
+                                </div>
+                            )}
+                            <div
+                                className={`${
+                                    darkMode
+                                        ? "bg-blue-900/30"
+                                        : "bg-blue-50"
+                                } p-6 rounded-lg border-l-4 border-blue-600`}
+                            >
+                                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                                    <BookOpen className="text-blue-600" />{" "}
+                                    Memory Verse
+                                </h3>
+                                {editingContent === "intro" ? (
+                                    <textarea
+                                        value={contentData.memoryVerse}
+                                        onChange={(e) =>
+                                            updateContent(
+                                                "memoryVerse",
+                                                e.target.value
+                                            )
+                                        }
+                                        className={`w-full px-4 py-2 rounded-lg border text-xl italic mb-4 ${
+                                            darkMode
+                                                ? "bg-gray-800 border-gray-600"
+                                                : "bg-white border-gray-300"
+                                        }`}
+                                        rows={2}
+                                    />
+                                ) : (
+                                    <blockquote className="text-xl italic mb-4">
+                                        "{contentData.memoryVerse}"
+                                    </blockquote>
+                                )}
+                                <button
+                                    onClick={() =>
+                                        showBibleVersions(
+                                            contentData.memoryVerseRef
+                                        )
+                                    }
+                                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2"
+                                >
+                                    <BookOpen size={16} />
+                                    Read {contentData.memoryVerseRef}
+                                </button>
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold mb-3">
+                                    Text: Eph. 4:17-18
+                                </h3>
+                                <div className="flex gap-2 flex-wrap">
                                     <button
                                         onClick={() =>
                                             showBibleVersions(
-                                                contentData.memoryVerseRef
+                                                "Ephesians 4:17-18"
                                             )
                                         }
                                         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2"
                                     >
                                         <BookOpen size={16} />
-                                        Read {contentData.memoryVerseRef}
+                                        Read Ephesians 4:17-18
                                     </button>
-                                </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold mb-3">
-                                        Text: Matthew 15:29-37
-                                    </h3>
-                                    <div className="flex gap-2 flex-wrap">
-                                        <button
-                                            onClick={() =>
-                                                showBibleVersions(
-                                                    "Matthew 15:29-37"
-                                                )
-                                            }
-                                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2"
-                                        >
-                                        <BookOpen size={16} />
-                                            Read Matthew 15:29-37
-                                        </button>
 
-                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold mb-3">
-                                        Introduction
-                                    </h3>
-                                    {editingContent === "intro" ? (
-                                        <textarea
-                                            value={contentData.introduction}
-                                            onChange={(e) =>
-                                                updateContent(
-                                                    "introduction",
-                                                    e.target.value
-                                                )
-                                            }
-                                            className={`w-full px-4 py-2 rounded-lg border ${
-                                                darkMode
-                                                    ? "bg-gray-800 border-gray-600"
-                                                    : "bg-white border-gray-300"
-                                            }`}
-                                            rows={6}
-                                        />
-                                    ) : (
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold mb-3">
+                                    Introduction
+                                </h3>
+                                {editingContent === "intro" ? (
+                                    <textarea
+                                        value={contentData.introduction}
+                                        onChange={(e) =>
+                                            updateContent(
+                                                "introduction",
+                                                e.target.value
+                                            )
+                                        }
+                                        className={`w-full px-4 py-2 rounded-lg border ${
+                                            darkMode
+                                                ? "bg-gray-800 border-gray-600"
+                                                : "bg-white border-gray-300"
+                                        }`}
+                                        rows={6}
+                                    />
+                                ) : (
+                                    <div>
                                         <p className="leading-relaxed">
                                             {contentData.introduction}
-                                            <div className="flex gap-4">
-                                                <button
+                                        </p>
+                                        <div className="flex flex-wrap gap-2 mt-4">
+                                            <button
                                                 onClick={() =>
                                                     showBibleVersions(
-                                                        "Genesis 1:1"
+                                                        "Romans 12:1"
                                                     )
                                                 }
-                                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
+                                                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg transition flex items-center gap-2 text-sm shadow-md"
                                             >
-                                            <BookOpen size={16} />
-                                                Genesis 1:1
+                                                <BookOpen size={16} />
+                                                Romans 12:1
                                             </button>
-
-                                            <button
-                                            onClick={() =>
-                                                showBibleVersions(
-                                                    "James 1:17"
-                                                )
-                                            }
-                                         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
-                                        >
-                                            <BookOpen size={16} />
-                                                James 1:17
-                                            </button>
-                                            <button
-                                            onClick={() =>
-                                                showBibleVersions(
-                                                    "John 8:32"
-                                                )
-                                            }
-                                         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 mt-2 rounded-lg transition flex items-center gap-2 text-sm"
-                                        >
-                                            <BookOpen size={16} />
-                                                John 8:32
-                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                            <div
+                                className={`${
+                                    darkMode
+                                        ? "bg-green-900/30"
+                                        : "bg-green-50"
+                                } p-6 rounded-lg`}
+                            >
+                                <h3 className="text-xl font-bold mb-3">
+                                    Aims and Objectives
+                                </h3>
+                                <div className="space-y-4">
+                                    <div>
+                                        <strong className="text-green-700 dark:text-green-400 block mb-1">
+                                            AIMS:
+                                        </strong>
+                                        {editingContent === "intro" ? (
+                                            <textarea
+                                                value={contentData.aims}
+                                                onChange={(e) =>
+                                                    updateContent(
+                                                        "aims",
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className={`w-full px-3 py-2 rounded-lg border mt-2 ${
+                                                    darkMode
+                                                        ? "bg-gray-800 border-gray-600"
+                                                        : "bg-white border-gray-300"
+                                                }`}
+                                                rows={3}
+                                            />
+                                        ) : (
+                                            <p className="leading-relaxed opacity-90">{contentData.aims}</p>
+                                        )}
+                                    </div>
+                                    <div>
+                                        <strong className="text-green-700 dark:text-green-400 block mb-1">
+                                            OBJECTIVES:
+                                        </strong>
+                                        {editingContent === "intro" ? (
+                                            <textarea
+                                                value={contentData.objectives}
+                                                onChange={(e) =>
+                                                    updateContent(
+                                                        "objectives",
+                                                        e.target.value
+                                                    )
+                                                }
+                                                className={`w-full px-3 py-2 rounded-lg border mt-2 ${
+                                                    darkMode
+                                                        ? "bg-gray-800 border-gray-600"
+                                                        : "bg-white border-gray-300"
+                                                }`}
+                                                rows={2}
+                                            />
+                                        ) : (
+                                            <div>
+                                                <p className="leading-relaxed opacity-90 mb-3">
+                                                    {contentData.objectives}
+                                                </p>
+                                                {contentData.objectiveScriptures && contentData.objectiveScriptures.length > 0 && (
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {contentData.objectiveScriptures.map((scripture) => (
+                                                            <button
+                                                                key={scripture}
+                                                                onClick={() => showBibleVersions(scripture)}
+                                                                className="bg-blue-600 hover:bg-blue-700 active:scale-95 text-white px-3 py-1.5 rounded-lg transition flex items-center gap-2 text-xs font-medium shadow-md"
+                                                            >
+                                                                <BookOpen size={14} />
+                                                                Read {scripture}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </div>
-                                            
-                                        </p>
-                                        
-                                    )}
-                                   
-                                </div>
-                                <div
-                                    className={`${
-                                        darkMode
-                                            ? "bg-green-900/30"
-                                            : "bg-green-50"
-                                    } p-6 rounded-lg`}
-                                >
-                                    <h3 className="text-xl font-bold mb-3">
-                                        Aims and Objectives
-                                    </h3>
-                                    <div className="space-y-3">
-                                        <div>
-                                            <strong className="text-green-700 dark:text-green-400">
-                                                AIMS:
-                                            </strong>
-                                            {editingContent === "intro" ? (
-                                                <textarea
-                                                    value={contentData.aims}
-                                                    onChange={(e) =>
-                                                        updateContent(
-                                                            "aims",
-                                                            e.target.value
-                                                        )
-                                                    }
-                                                    className={`w-full px-3 py-2 rounded-lg border mt-2 ${
-                                                        darkMode
-                                                            ? "bg-gray-800 border-gray-600"
-                                                            : "bg-white border-gray-300"
-                                                    }`}
-                                                    rows={3}
-                                                />
-                                            ) : (
-                                                <p>{contentData.aims}</p>
-                                            )}
-                                        </div>
-                                        <div>
-                                            <strong className="text-green-700 dark:text-green-400">
-                                                OBJECTIVES:
-                                            </strong>
-                                            {editingContent === "intro" ? (
-                                                <textarea
-                                                    value={
-                                                        contentData.objectives
-                                                    }
-                                                    onChange={(e) =>
-                                                        updateContent(
-                                                            "objectives",
-                                                            e.target.value
-                                                        )
-                                                    }
-                                                    className={`w-full px-3 py-2 rounded-lg border mt-2 ${
-                                                        darkMode
-                                                            ? "bg-gray-800 border-gray-600"
-                                                            : "bg-white border-gray-300"
-                                                    }`}
-                                                    rows={2}
-                                                />
-                                            ) : (
-                                                <p>{contentData.objectives}</p>
-                                            )}
-                                        </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
-                        )}
+                        </div>
+                    )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         {activeTab === "lesson" && (
                             <div className="space-y-6">
                                 {editingContent === "lesson" && (
@@ -1167,7 +1093,7 @@ const [contentData, setContentData] = useState<ContentData>({
                                     <p className="leading-relaxed mb-4">
                                         {contentData.lessonIntro}
                                         <div className="mt-4 flex flex-wrap gap-2">
-                                            {contentData.lessonIntroScriptures.map(
+                                            {/* {contentData.lessonIntroScriptures.map(
                                                 (scripture) => (
                                                     <button
                                                         key={scripture}
@@ -1182,6 +1108,21 @@ const [contentData, setContentData] = useState<ContentData>({
                                                         {scripture}
                                                     </button>
                                                 )
+                                            )} */}
+                                            {/* 2. The Scripture Buttons container safely placed outside the <p> tag */}
+                                            {contentData.lessonIntroScriptures && contentData.lessonIntroScriptures.length > 0 && (
+                                                <div className="mt-4 flex flex-wrap gap-2">
+                                                    {contentData.lessonIntroScriptures.map((scripture) => (
+                                                        <button
+                                                            key={scripture}
+                                                            onClick={() => showBibleVersions(scripture)}
+                                                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2 text-sm font-medium shadow-sm"
+                                                        >
+                                                            <BookOpen size={16} />
+                                                            Read {scripture}
+                                                        </button>
+                                                    ))}
+                                                </div>
                                             )}
                                     
                                         </div>

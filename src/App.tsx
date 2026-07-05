@@ -49,78 +49,114 @@ type BibleVersions = {
 type ScriptureDB = Record<string, BibleVersions>;
 
 const initialScriptureDB: ScriptureDB = {
-  "2 Timothy 3:5": {
-    "KJV": "5 Having a form of godliness, but denying the power thereof: from such turn away.",
-    "NKJV": "5 having a form of godliness but denying its power. And from such people turn away!",
-    "NIV": "5 having a form of godliness but denying its power. Have nothing to do with such people.",
-    "ESV": "5 having the appearance of godliness, but denying its power. Avoid such people.",
-    "AMP": "5 holding to a form of [outward] godliness (religion), although they have denied its power [for their conduct nullifies their claim of faith]. Avoid such people and keep far away from them.",
-    "NLT": "5 They will act religious, but they will reject the power that could make them godly. Stay away from people like that!"
+  "1 Peter 5:8": {
+    "KJV": "8 Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour:",
+    "NKJV": "8 Be sober, be vigilant; because your adversary the devil walks about like a roaring lion, seeking whom he may devour.",
+    "NIV": "8 Be alert and of sober mind. Your enemy the devil prowls around like a roaring lion looking for someone to devour.",
+    "ESV": "8 Be sober-minded; be watchful. Your adversary the devil prowls around like a roaring lion, seeking someone to devour.",
+    "AMP": "8 Be sober [well balanced and self-disciplined], be vigilant and cautious at all times; that enemy of yours, the devil, prowls around like a roaring lion [fiercely hungry], seeking someone to devour.",
+    "NLT": "8 Stay alert! Watch out for your great enemy, the devil. He prowls around like a roaring lion, looking for someone to devour."
   },
-  "Ephesians 4:17-18": {
-    "KJV": "17 This I say therefore, and testify in the Lord, that ye henceforth walk not as other Gentiles walk, in the vanity of their mind, 18 Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart:",
-    "NKJV": "17 This I say, therefore, and testify in the Lord, that you should no longer walk as the rest of the Gentiles walk, in the futility of their mind, 18 having their understanding darkened, being alienated from the life of God because of the ignorance that is in them, because of the blindness of their heart;",
-    "NIV": "17 So I tell you this, and insist on it in the Lord, that you must no longer live as the Gentiles do, in the futility of their thinking. 18 They are darkened in their understanding and separated from the life of God because of the ignorance that is in them due to the hardening of their hearts.",
-    "ESV": "17 Now this I say and testify in the Lord, that you must no longer walk as the Gentiles do, in the futility of their minds. 18 They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart.",
-    "AMP": "17 So I say this, and affirm in the Lord, that you must no longer walk as the Gentiles walk, in the futility of their minds [and in the foolishness and emptiness of their souls], 18 for their [moral] understanding is darkened and their reasoning is beclouded; [they are] alienated and estranged from the life of God [with no share in it] because of the [willful] ignorance that is deep-seated in them, because of the hardness and insensitivity of their hearts.",
-    "NLT": "17 With the Lord’s authority I say this: Live no longer as the Gentiles do, for they are hopelessly confused. 18 Their minds are full of darkness; they wander far from the life God gives because they have closed their minds and hardened their hearts against him."
+  "1 Samuel 13:16-22": {
+    "KJV": "16 And Saul, and Jonathan his son, and the people that were present with them, abode in Gibeah of Benjamin: but the Philistines encamped in Michmash. 17 And the spoilers came out of the camp of the Philistines in three companies: one company turned unto the way that leadeth to Ophrah, unto the land of Shual: 18 And another company turned the way to Bethhoron: and another company turned to the way of the border that looketh to the valley of Zeboim toward the wilderness. 19 Now there was no smith found throughout all the land of Israel: for the Philistines said, Lest the Hebrews make them swords or spears: 20 But all the Israelites went down to the Philistines, to sharpen every man his share, and his coulter, and his ax, and his mattock. 21 Yet they had a file for the mattocks, and for the coulters, and for the精神, and for the axes, and to sharpen the goads. 22 So it came to pass in the day of battle, that there was neither sword nor spear found in the hand of any of the people that were with Saul and Jonathan: but with Saul and with Jonathan his son was there found.",
+    "NKJV": "16 Saul, Jonathan his son, and the people present with them remained in Gibeah of Benjamin. But the Philistines encamped in Michmash. 17 Then raiders came out of the camp of the Philistines in three companies. One company turned onto the road to Ophrah, to the land of Shual, 18 another company turned toward the road to Beth Horon, and another company turned to the road of the border that overlooks the Valley of Zeboim toward the wilderness. 19 Now there was no blacksmith to be found throughout all the land of Israel, for the Philistines said, “Lest the Hebrews make swords or spears.” 20 But all the Israelites would go down to the Philistines to sharpen each man’s plowshare, his mattock, his ax, and his sickle; 21 and the charge was a pim for the plowshares, the mattocks, the three-pronged forks, and the axes, and to sharpen the goads. 22 So it came to pass, on the day of battle, that there was neither sword nor spear found in the hand of any of the people who were with Saul and Jonathan. But they were found with Saul and Jonathan his son.",
+    "NIV": "16 Saul and his son Jonathan and the men with them were staying in Gibeah in Benjamin, while the Philistines camped at Michmash. 17 Raiding parties went out from the Philistine camp in three detachments. One turned toward Ophrah in the vicinity of Shual, 18 another toward Beth Horon, and the third toward the border land overlooking the Valley of Zeboim facing the wilderness. 19 Not a blacksmith could be found in the whole land of Israel, because the Philistines had said, “Otherwise the Hebrews will make swords or spears!” 20 So all Israel went down to the Philistines to have their plowshares, mattocks, axes and sickles sharpened. 21 The price was two-thirds of a shekel for sharpening plowshares and mattocks, and a third of a shekel for sharpening forks and axes and for repointing goads. 22 So on the day of the battle not a soldier with Saul and Jonathan had a sword or spear in his hand; only Saul and his son Jonathan had them.",
+    "ESV": "16 And Saul and Jonathan his son and the people who were present with them stayed in Geba of Benjamin, but the Philistines encamped in Michmash. 17 And raiders came out of the camp of the Philistines in three companies. One company turned toward Ophrah, to the land of Shual; 18 another company turned toward Beth-horon; and another company turned toward the border that looks down on the Valley of Zeboim toward the wilderness. 19 Now there was no blacksmith to be found throughout all the land of Israel, for the Philistines said, “Lest the Hebrews make themselves swords or spears.” 20 But every one of the Israelites went down to the Philistines to sharpen his plowshare, his mattock, his axe, or his sickle, 21 and the charge was a pim for the plowshares and for the mattocks, and a third of a shekel for sharpening the axes and for setting the goads. 22 So on the day of the battle there was neither sword nor spear found in the hand of any of the people with Saul and Jonathan, but Saul and Jonathan his son had them.",
+    "AMP": "16 Saul and Jonathan his son and the people with them were staying in Geba of Benjamin, while the Philistines encamped at Michmash. 17 And the raiding parties came out of the Philistine camp in three companies: one company turned toward Ophrah, to the land of Shual; 18 another company turned toward Beth-horon; and another company turned toward the border land overlooking the Valley of Zeboim toward the wilderness. 19 Now no blacksmith could be found in all the land of Israel, for the Philistines said, “Otherwise the Hebrews will make swords or spears.” 20 So all the Israelites went down to the Philistines, each to get his plowshare, his mattock, his axe, or his sickle sharpened. 21 And the charge was a pim (two-thirds of a shekel) for the plowshares and for the mattocks, and a third of a shekel for sharpening the axes and for setting the goads. 22 So it came to pass on the day of battle that there was neither sword nor spear found in the hand of any of the people who were with Saul and Jonathan; but Saul and Jonathan his son had them.",
+    "NLT": "16 Saul and Jonathan and the men with them were staying at Geba in the land of Benjamin. The Philistines, meanwhile, were camped at Michmash. 17 Three raiding parties soon left the Philistine camp. One went north toward Ophrah in the land of Shual, 18 another went west to Beth-horon, and the third headed separation over the border toward the valley of Zeboim and the wilderness. 19 There were no blacksmiths in the land of Israel in those days. The Philistines wouldn’t allow them for fear they would make swords and spears for the Hebrews. 20 So whenever the Israelites needed to sharpen their plowshares, picks, axes, or sickles, they had to take them to a Philistine blacksmith. 21 The charges were as follows: a quarter of an ounce of silver for sharpening a plowshare or a pick, and an eighth of an ounce for sharpening an axe, a hoe, or an ox goad. 22 So on the day of the battle none of the people of Israel had a sword or spear, except for Saul and Jonathan."
   },
-  "Romans 12:1": {
-    "KJV": "1 I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.",
-    "NKJV": "1 I beseech you therefore, brethren, by the mercies of God, that you present your bodies a living sacrifice, holy, acceptable to God, which is your reasonable service.",
-    "NIV": "1 Therefore, I urge you, brothers and sisters, in view of God’s mercy, to offer your bodies as a living sacrifice, holy and pleasing to God—this is your true and proper worship.",
-    "ESV": "1 I appeal to you therefore, brothers, by the mercies of God, to present your bodies as a living sacrifice, holy and acceptable to God, which is your spiritual worship.",
-    "AMP": "1 Therefore I urge you, brothers and sisters, by the mercies of God, to present your bodies [dedicating all of yourselves, set apart] as a living sacrifice, holy and well-pleasing to God, which is your rational (logical, intelligent) act of worship.",
-    "NLT": "1 And so, dear brothers and sisters, I plead with you to give your bodies to God because of all he has done for you. Let them be a living and holy sacrifice—the kind he will find acceptable. This is truly the way to worship him."
+  "Psalms 62:11": {
+    "KJV": "11 God hath spoken once; twice have I heard this; that power belongeth unto God.",
+    "NKJV": "11 God has spoken once, Twice I have heard this: That power belongs to God.",
+    "NIV": "11 One thing God has spoken, two things I have heard: Power belongs to you, God,",
+    "ESV": "11 Once God has spoken; twice have I heard this: that power belongs to God,",
+    "AMP": "11 God has spoken once, twice I have heard this: that power belongs to God.",
+    "NLT": "11 God has spoken plainly, and I have heard it many times: Power, O God, belongs to you."
   },
-  "Matthew 23:13": {
-    "KJV": "13 But woe unto you, scribes and Pharisees, hypocrites! for ye shut up the kingdom of heaven against men: for ye neither go in yourselves, neither suffer ye them that are entering to go in.",
-    "NKJV": "13 “But woe to you, scribes and Pharisees, hypocrites! For you shut up the kingdom of heaven against men; for you neither go in yourselves, nor do you allow those who are entering to go in.",
-    "NIV": "13 “Woe to you, teachers of the law and Pharisees, hypocrites! You shut the door of the kingdom of heaven in people’s faces. You yourselves do not enter, nor will you let those enter who are trying to.",
-    "ESV": "13 “But woe to you, scribes and Pharisees, hypocrites! For you shut the kingdom of heaven in people's faces. For you neither enter yourselves nor allow those who would enter to go in.",
-    "AMP": "13 “But woe to you, [self-righteous] scribes and Pharisees, hypocrites, because you shut the kingdom of heaven in front of people; for you do not enter yourselves, nor do you allow those who are entering to go in.",
-    "NLT": "13 “What sorrow awaits you teachers of religious law and you Pharisees. Hypocrites! For you shut the door of the Kingdom of Heaven in people’s faces. You won’t go in yourselves, and you don’t let others enter either."
+  "Matthew 10:1": {
+    "KJV": "1 And when he had called unto him his twelve disciples, he gave them power against unclean spirits, to cast them out, and to heal all manner of sickness and all manner of disease.",
+    "NKJV": "1 And when He had called His twelve disciples to Him, He gave them power over unclean spirits, to cast them out, and to heal all kinds of sickness and all kinds of disease.",
+    "NIV": "1 Jesus called his twelve disciples to him and gave them authority to drive out impure spirits and to heal every disease and sickness.",
+    "ESV": "1 And he called to him his twelve disciples and gave them authority over unclean spirits, to cast them out, and to heal every disease and every affliction.",
+    "AMP": "1 Jesus summoned His twelve disciples and gave them authority and power over unclean spirits, to cast them out, and to heal every kind of disease and every kind of sickness.",
+    "NLT": "1 Jesus called his twelve disciples together and gave them authority to cast out evil spirits and to heal every kind of disease and illness."
   },
-  "John 17:15": {
-    "KJV": "15 I pray not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil.",
-    "NKJV": "15 I do not pray that You should take them out of the world, but that You should keep them from the evil one.",
-    "NIV": "15 My prayer is not that you take them out of the world but that you protect them from the evil one.",
-    "ESV": "15 I do not ask that you take them out of the world, but that you keep them from the evil one.",
-    "AMP": "15 I do not ask You to take them out of the world, but to keep them and protect them from the evil one.",
-    "NLT": "15 I’m not asking you to take them out of the world, but to keep them safe from the evil one."
+  "Mark 16:17-18": {
+    "KJV": "17 And these signs shall follow them that believe; In my name shall they cast out devils; they shall speak with new tongues; 18 They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover.",
+    "NKJV": "17 And these signs will follow those who believe: In My name they will cast out demons; they will speak with new tongues; 18 they will take up serpents; and if they drink anything deadly, it will by no means hurt them; they will lay hands on the sick, and they will recover.”",
+    "NIV": "17 And these signs will accompany those who believe: In my name they will drive out demons; they will speak in new tongues; 18 they will pick up snakes with their hands; and when they drink deadly poison, it will not hurt them at all; they will place their hands on sick people, and they will get well.”",
+    "ESV": "17 And these signs will accompany those who believe: in my name they will cast out demons; they will speak in new tongues; 18 they will pick up serpents with their hands; and if they drink any deadly poison, it will not hurt them; they will lay their hands on the sick, and they will recover.”",
+    "AMP": "17 And these signs will accompany those who believe: in My name they will cast out demons, they will speak in new tongues; 18 they will pick up serpents, and if they drink anything deadly, it will not hurt them; they will lay hands on the sick, and they will recover.”",
+    "NLT": "17 These miraculous signs will accompany those who believe: They will cast out demons in my name, and they will speak in new languages. 18 They will be able to handle snakes with safety, and if they drink anything poisonous, it won’t hurt them. They will be able to place their hands on the sick, and they will be healed.”"
   },
-  "Proverbs 4:23": {
-    "KJV": "23 Keep thy heart with all diligence; for out of it are the issues of life.",
-    "NKJV": "23 Keep your heart with all diligence, For out of it spring the issues of life.",
-    "NIV": "23 Above all else, guard your heart, for everything you do flows from it.",
-    "ESV": "23 Keep your heart with all vigilance, for from it flow the springs of life.",
-    "AMP": "23 Watch over your heart with all diligence, For from it flow the springs of life.",
-    "NLT": "23 Guard your heart above all else, for it determines the course of your life."
+  "1 Samuel 13:16": {
+    "KJV": "16 And Saul, and Jonathan his son, and the people that were present with them, abode in Gibeah of Benjamin: but the Philistines encamped in Michmash.",
+    "NKJV": "16 Saul, Jonathan his son, and the people present with them remained in Gibeah of Benjamin. But the Philistines encamped in Michmash.",
+    "NIV": "16 Saul and his son Jonathan and the men with them were staying in Gibeah in Benjamin, while the Philistines camped at Michmash.",
+    "ESV": "16 And Saul and Jonathan his son and the people who were present with them stayed in Geba of Benjamin, but the Philistines encamped in Michmash.",
+    "AMP": "16 Saul and Jonathan his son and the people with them were staying in Geba of Benjamin, while the Philistines encamped at Michmash.",
+    "NLT": "16 Saul and Jonathan and the men with them were staying at Geba in the land of Benjamin. The Philistines, meanwhile, were camped at Michmash."
   },
-  "Hosea 4:6": {
-    "KJV": "6 My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children.",
-    "NKJV": "6 My people are destroyed for lack of knowledge. Because you have rejected knowledge, I also will reject you from being priest to Me; Because you have forgotten the law of your God, I also will forget your children.",
-    "NIV": "6 my people are destroyed from lack of knowledge. “Because you have rejected knowledge, I also reject you as my priests; because you have ignored the law of your God, I also will ignore your children.",
-    "ESV": "6 My people are destroyed for lack of knowledge; because you have rejected knowledge, I reject you from being a priest to me. And since you have forgotten the law of your God, I also will forget your children.",
-    "AMP": "6 My people are destroyed for lack of knowledge. Because you [the priestly nation] have rejected knowledge, I will also reject you from being My priest. Since you have forgotten the law of your God, I will also forget your children.",
-    "NLT": "6 My people are being destroyed because they don’t know me. Since you priests refuse to know me, I refuse to recognize you as my priests. Since you have forgotten the laws of your God, I will forget to bless your children."
+  "1 Samuel 13:17-18": {
+    "KJV": "17 And the spoilers came out of the camp of the Philistines in three companies: one company turned unto the way that leadeth to Ophrah, unto the land of Shual: 18 And another company turned the way to Bethhoron: and another company turned to the way of the border that looketh to the valley of Zeboim toward the wilderness.",
+    "NKJV": "17 Then raiders came out of the camp of the Philistines in three companies. One company turned onto the road to Ophrah, to the land of Shual, 18 another company turned toward the road to Beth Horon, and another company turned to the road of the border that overlooks the Valley of Zeboim toward the wilderness.",
+    "NIV": "17 Raiding parties went out from the Philistine camp in three detachments. One turned toward Ophrah in the vicinity of Shual, 18 another toward Beth Horon, and the third toward the border land overlooking the Valley of Zeboim facing the wilderness.",
+    "ESV": "17 And raiders came out of the camp of the Philistines in three companies. One company turned toward Ophrah, to the land of Shual; 18 another company turned toward Beth-horon; and another company turned toward the border that looks down on the Valley of Zeboim toward the wilderness.",
+    "AMP": "17 And the raiding parties came out of the Philistine camp in three companies: one company turned toward Ophrah, to the land of Shual; 18 another company turned toward Beth-horon; and another company turned toward the border land overlooking the Valley of Zeboim toward the wilderness.",
+    "NLT": "17 Three raiding parties soon left the Philistine camp. One went north toward Ophrah in the land of Shual, 18 another went west to Beth-honon, and the third headed toward the border overlooking the Valley of Zeboim and the wilderness."
   },
-  "Romans 6:1": {
-    "KJV": "1 What shall we say then? Shall we continue in sin, that grace may abound?",
-    "NKJV": "1 What shall we say then? Shall we continue in sin that grace may abound?",
-    "NIV": "1 What shall we say, then? Shall we go on sinning so that grace may increase?",
-    "ESV": "1 What shall we say then? Are we to continue in sin that grace may abound?",
-    "AMP": "1 What shall we say then? Are we to continue in sin so that [God’s gift of] grace may increase and overflow?",
-    "NLT": "1 Well then, should we keep on sinning so that God can show us more and more of his wonderful grace?"
+  "2 Corinthians 2:11": {
+    "KJV": "11 Lest Satan should get an advantage of us: for we are not ignorant of his devices.",
+    "NKJV": "11 lest Satan should take advantage of us; for we are not ignorant of his devices.",
+    "NIV": "11 in order that Satan might not outwit us. For we are not unaware of his schemes.",
+    "ESV": "11 so that we would not be outwitted by Satan; for we are not ignorant of his designs.",
+    "AMP": "11 to keep Satan from taking advantage of us; for we are not ignorant of his schemes.",
+    "NLT": "11 so that Satan will not outsmart us. For we are familiar with his evil schemes."
   },
-  "Matthew 5:16": {
-    "KJV": "16 Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.",
-    "NKJV": "16 Let your light so shine before men, that they may see your good works and glorify your Father in heaven.",
-    "NIV": "16 In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven.",
-    "ESV": "16 In the same way, let your light shine before others, so that they may see your good works and give glory to your Father who is in heaven.",
-    "AMP": "16 Let your light shine before men in such a way that they may see your good deeds and moral excellence, and [recognize and honor and] glorify your Father who is in heaven.",
-    "NLT": "16 In the same way, let your good deeds shine out for all to see, so that everyone will praise your heavenly Father."
-  }
+  "1 Samuel 13:19-22": {
+    "KJV": "19 Now there was no smith found throughout all the land of Israel: for the Philistines said, Lest the Hebrews make them swords or spears: 20 But all the Israelites went down to the Philistines, to sharpen every man his share, and his coulter, and his ax, and his mattock. 21 Yet they had a file for the mattocks, and for the coulters, and for the forks, and for the axes, and to sharpen the goads. 22 So it came to pass in the day of battle, that there was neither sword nor spear found in the hand of any of the people that were with Saul and Jonathan: but with Saul and with Jonathan his son was there found.",
+    "NKJV": "19 Now there was no blacksmith to be found throughout all the land of Israel, for the Philistines said, “Lest the Hebrews make swords or spears.” 20 But all the Israelites would go down to the Philistines to sharpen each man’s plowshare, his mattock, his ax, and his sickle; 21 and the charge was a pim for the plowshares, the mattocks, the three-pronged forks, and the axes, and to sharpen the goads. 22 So it came to pass, on the day of battle, that there was neither sword nor spear found in the hand of any of the people who were with Saul and Jonathan. But they were found with Saul and Jonathan his son.",
+    "NIV": "19 Not a blacksmith could be found in the whole land of Israel, because the Philistines had said, “Otherwise the Hebrews will make swords or spears!” 20 So all Israel went down to the Philistines to have their plowshares, mattocks, axes and sickles sharpened. 21 The price was two-thirds of a shekel for sharpening plowshares and mattocks, and a third of a shekel for sharpening forks and axes and for repointing goads. 22 So on the day of the battle not a soldier with Saul and Jonathan had a sword or spear in his hand; only Saul and his son Jonathan had them.",
+    "ESV": "19 Now there was no blacksmith to be found throughout all the land of Israel, for the Philistines said, “Lest the Hebrews make themselves swords or spears.” 20 But every one of the Israelites went down to the Philistines to sharpen his plowshare, his mattock, his axe, or his sickle, 21 and the charge was a pim for the plowshares and for the mattocks, and a third of a shekel for sharpening the axes and for setting the goads. 22 So on the day of the battle there was neither sword nor spear found in the hand of any of the people with Saul and Jonathan, but Saul and Jonathan his son had them.",
+    "AMP": "19 Now no blacksmith could be found in all the land of Israel, for the Philistines said, “Otherwise the Hebrews will make swords or spears.” 20 So all the Israelites went down to the Philistines, each to get his plowshare, his mattock, his axe, or his sickle sharpened. 21 And the charge was a pim (two-thirds of a shekel) for the plowshares and for the mattocks, and a third of a shekel for sharpening the axes and for setting the goads. 22 So it came to pass on the day of battle that there was neither sword nor spear found in the hand of any of the people who were with Saul and Jonathan; but Saul and Jonathan his son had them.",
+    "NLT": "19 There were no blacksmiths in the land of Israel in those days. The Philistines wouldn’t allow them for fear they would make swords and spears for the Hebrews. 20 So whenever the Israelites needed to sharpen their plowshares, picks, axes, or sickles, they had to take them to a Philistine blacksmith. 21 The charges were as follows: a quarter of an ounce of silver for sharpening a plowshare or a pick, and an eighth of an ounce for sharpening an axe, a hoe, or an ox goad. 22 So on the day of the battle none of the people of Israel had a sword or spear, except for Saul and Jonathan."
+  },
+  "2 Corinthians 10:4": {
+    "KJV": "4 (For the weapons of our warfare are not carnal, but mighty through God to the pulling down of strong holds;)",
+    "NKJV": "4 For the weapons of our warfare are not carnal but mighty in God for pulling down strongholds,",
+    "NIV": "4 The weapons we fight with are not the weapons of the world. On the contrary, they have divine power to demolish strongholds.",
+    "ESV": "4 For the weapons of our warfare are not of the flesh but have divine power to destroy strongholds.",
+    "AMP": "4 The weapons of our warfare are not physical [weapons of flesh and blood], but they are mighty before God for the overthrow and destruction of strongholds,",
+    "NLT": "4 We use God’s mighty weapons, not worldly weapons, to knock down the devil’s strongholds."
+  },
+  "1 Samuel 13:22": {
+    "KJV": "22 So it came to pass in the day of battle, that there was neither sword nor spear found in the hand of any of the people that were with Saul and Jonathan: but with Saul and with Jonathan his son was there found.",
+    "NKJV": "22 So it came to pass, on the day of battle, that there was neither sword nor spear found in the hand of any of the people who were with Saul and Jonathan. But they were found with Saul and Jonathan his son.",
+    "NIV": "22 So on the day of the battle not a soldier with Saul and Jonathan had a sword or spear in his hand; only Saul and his son Jonathan had them.",
+    "ESV": "22 So on the day of the battle there was neither sword nor spear found in the hand of any of the people with Saul and Jonathan, but Saul and Jonathan his son had them.",
+    "AMP": "22 So it came to pass on the day of battle that there was neither sword nor spear found in the hand of any of the people who were with Saul and Jonathan; but Saul and Jonathan his son had them.",
+    "NLT": "22 So on the day of the battle none of the people of Israel had a sword or spear, except for Saul and Jonathan."
+  },
+  "Acts 1:8": {
+    "KJV": "8 But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.",
+    "NKJV": "8 But you shall receive power when the Holy Spirit has come upon you; and you shall be witnesses to Me in Jerusalem, and in all Judea and Samaria, and to the end of the earth.",
+    "NIV": "8 But you will receive power when the Holy Spirit comes on you; and you will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth.",
+    "ESV": "8 But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth.",
+    "AMP": "8 But you will receive power and ability when the Holy Spirit comes upon you; and you will be My witnesses [to tell people about Me] both in Jerusalem and in all Judea, and Samaria, and even to the ends of the earth.",
+    "NLT": "8 But you will receive power when the Holy Spirit comes upon you. And you will be my witnesses, telling people about me everywhere—in Jerusalem, throughout Judea, in Samaria, and to the ends of the earth.",
+},
+
+"Psalm 62:11": {
+    "KJV": "God hath spoken once; twice have I heard this; that power belongeth unto God.",
+    "NKJV": "God has spoken once, Twice I have heard this: That power belongs to God.",
+    "NIV": "One thing God has spoken, two things I have heard: Power belongs to you, God,",
+    "ESV": "Once God has spoken; twice have I heard this: that power belongs to God,",
+    "AMP": "God has spoken once, twice I have heard this: that power belongs to God.",
+    "NLT": "God has spoken plainly, and I have heard it many times: Power, O God, belongs to you."
+},
+
+  
+
 };
 
 
@@ -185,81 +221,72 @@ const SundaySchoolApp = () => {
 
 const [contentData, setContentData] = useState<ContentData>({
     lessonDate: "July 5, 2026", 
-    lessonTitle: "LIVING AS A CHILD OF GOD",
+    lessonTitle: "THE BELIEVERS NEGLIGENCE",
 
     memoryVerse:
-        "Having a form of godliness, but denying the power thereof: from such, turn away. - 2 Tim. 3:5",
-    memoryVerseRef: "2 Timothy 3:5", 
+        "be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour. - 1 Peter 5:8",
+    memoryVerseRef: "1 Peter 5:8", 
 
-    introScriptures: ["Ephesians 4:17-18"],
+    introScriptures: ["Psalms 62:11", "Matthew 10:1", "Mark 16:17-18", "Acts 1:8"],
 
     introduction:
-        "Most of us children of God have come on board the kingdom of God from a gentile background whose attributes were opposed to God's way of life. Since we have become Christians we ought to live the life which is contrary to gentile life of ungodliness - Rom 12:1.",
+        "It is true that our God is Almighty and has given us His surpassing power to dominate but so many Christians are too weak in comparison. Ps 62:11, Matt 10:1, Mark 16:17-18, Acts 1:8. The reason why believers seem powerless is because of negligence of what it takes to activate the resident power to maximum advantage and demonstrate supremacy. If one is careful to appreciate God's directives and watch for the enemy he will overcome always.",
 
     aims:
-        "To discourage the Christian brethren from living a life which is contrary to their profession.",
+        "To reveal the deficiencies of a Christian in order to reposition him.",
 
-    // objectives:
-        // "That you may be the light that attracts instead of darkness that will repel people from coming to Jesus - Matt 23:13.",
-    // Add this inside your useState object alongside your objective text
     objectives:
-        "That you may be the light that attracts instead of darkness that will repel people from coming to Jesus - Matt 23:13.",
-    objectiveScriptures: ["Matthew 23:13"],
-    
+        "To release the believer to dominate the earth and all that is in it.",
+
+    objectiveScriptures: [],
+
     lessonIntro:
-        "Jesus prayed the Father not to take his children away from the world but that he may keep them. As long as you remain in the world, your former lifestyle may appeal to you but know that it is against God and you cannot therefore live as an unbeliever. If the thing that makes an unbeliever remains as one does exist in you, it will make you live as one. Let us consider the scriptures in the text.",
+        "The battle line was drawn between Israel and the Philistines but Israel had no weapons to fight. The Philistines captured one of Israel's treasure cities and camped there while King Saul and his few quaking men were in the comfort of their luxurious headquarters city of Gibeah. The rest of the Israelites had hidden themselves for fear of the Philistines. The same experience awaits every negligent believer because we are in constant battle with the kingdom of darkness.",
         
-    lessonIntroScriptures: ["John 17:15", "Ephesians 4:17-18"],
+    lessonIntroScriptures: ["1 Samuel 13:16-22"],
     
     lessonPoints: [
         {
-            title: "1. THE BLINDNESS OF THE HEART",
+            title: "LIVING IN COMFORTABLE ABODE",
             content:
-                "The heart is the key that determines the life of a man and if it is blind, then the man is bound to stumble and fall. Heart blindness causes hardness of the heart because it doesn't know what decision it is making and mostly it does the wrong ones. Certain things are responsible for blindness of the heart.",
-            scriptures: ["Proverbs 4:23"],
-            subPoints: [
-                { title: "(A)", content: "Refusal to surrender to Jesus Christ" },
-                { title: "(B)", content: "Feeling of self-sufficiency" },
-                { title: "(C)", content: "Pride" },
-                { title: "(D)", content: "Arrogance" }
-            ],
-        },
-        {
-            title: "2. IGNORANCE",
-            content:
-                "The Bible says that people are destroyed for lack of knowledge. Ignorance is a deadly weapon of Satan to destroy its victims. Heart blindness leads to ignorance. Ignorance is the factor responsible for Satan taking advantage of man to darken his understanding, and separation from the life of God. Ignorance produces:",
-            scriptures: ["Hosea 4:6"],
+                "King Saul and his few men stayed back in the comfort of Gibeah at the time of war. This is applicable to many believers in order to avoid confrontation. Notwithstanding, the Philistines drafted themselves out of comfort to a camp at Michmash in readiness to raid Israel. In this mode the believers always suffer loss because the battle is fought at his home. Verse 16.",
+            scriptures: ["1 Samuel 13:16"],
             subPoints: [],
         },
         {
-            title: "A. VANITY OF THE MIND",
+            title: "IGNORANT OF WAR STRATEGIES",
             content:
-                "It means fruitlessness - mind malfunction. The mind becomes strange to what is good and beneficial.",
-            scriptures: [],
+                "The Philistines had three raiding bands which also checkmated Israel but Saul and Israel had no strategy rather than staying in their comfort city. Verse 17-18. Many believers have lost battles in like manner because of lack of strategies. Don't be ignorant of the enemy's devices. 2 Cor 2:11.",
+            scriptures: ["1 Samuel 13:17-18", "2 Corinthians 2:11"],
             subPoints: [],
         },
         {
-            title: "B. UNDERSTANDING DARKENED",
+            title: "TOO NEGLIGENT TO NOTICE NECESSITIES",
             content:
-                "Gentiles have so yielded to Satan and the systems of the world which originated from Satan. Satan is darkness and would steal your understanding by blocking it lest you be free from his control, knowing the truth will free a man, so Satan would do anything to stop this. If you don't appreciate the things of God then call for help because Satan has enveloped your understanding with darkness.",
-            scriptures: [],
+                "The Philistines disallowed Blacksmiths in Israel and sapped their economic strength in order to cripple their military strength. In all these, Saul read no meaning to it because he was too negligent. Verse 19 - 22. The believer has many weapons of war but if he is careless, the enemies will sap him of all to defeat him. 2 Cor 10:4.",
+            scriptures: ["1 Samuel 13:19-22", "2 Corinthians 10:4"],
+            subPoints: [],
+        },
+        {
+            title: "NO PREPARATION",
+            content:
+                "Every army acquires and reserves weapons because those are her strength. The insufficient weapon on Israel's side shows that She wasn't prepared for war due to negligence. Verse 22.",
+            scriptures: ["1 Samuel 13:22"],
             subPoints: [],
         },
     ],
 
     conclusion:
-        "By your fruits, you can tell whether you are still living as a gentile (unbeliever). You cannot continue to sin that grace may abound - Rom 6:1. Live as a child of God. You profess that men may glorify God - Matt 5:16.",
+        "Negligence turns victors into victims. When a believer rests in spiritual comfort while the enemy plans strategies, defeat becomes inevitable. We must stay alert, guard our tools, and actively prepare for warfare.",
 
-    conclusionScriptures: ["Romans 6:1", "Matthew 5:16"],
+    conclusionScriptures: [],
 
     prayerPoints: [
-        "Lord, I throw off every residual trace of the old lifestyle and fully surrender my heart to be illuminated by Your Holy Spirit!",
-        "Father, destroy every root of pride, arrogance, and self-sufficiency in me; let my life be a shining light that draws others closer to Jesus!",
-        "Oh Lord, break every stronghold of ignorance or spiritual blindness over my mind, and give me a clear understanding to walk daily as Your true child!"
+        "Father, deliver me from every form of spiritual laziness and negligence that exposes my life to the attacks of the enemy.",
+        "Lord, grant me divine strategies and keep me alert to understand the schemes and devices of the adversary.",
+        "Oh Lord, stir up a passion for spiritual preparation within me; let none of the weapons You have given me be stripped away by the enemy."
     ],
 });
-
-
 
 
 
@@ -491,7 +518,7 @@ const [contentData, setContentData] = useState<ContentData>({
 
 
         if (appLoading) {
-    const animatedText = "My Month of Complelling Favour Genesis 39:1-7, Neh. 2:1-8".split("");
+    const animatedText = "Complelling Favour - Genesis 39:1-6, Neh. 2:2-8".split("");
 
     return (
         <div className="fixed inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 flex items-center justify-center z-50">
@@ -598,7 +625,7 @@ const [contentData, setContentData] = useState<ContentData>({
                             Sunday School Lesson
                         </h1>
                         <p className="text-xl opacity-80">
-                            Living As A Child of God
+                            THE BELIEVERS NEGLIGENCE
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -882,19 +909,19 @@ const [contentData, setContentData] = useState<ContentData>({
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold mb-3">
-                                    Text: Eph. 4:17-18
+                                    Text: 1 Samuel 13:16-22
                                 </h3>
                                 <div className="flex gap-2 flex-wrap">
                                     <button
                                         onClick={() =>
                                             showBibleVersions(
-                                                "Ephesians 4:17-18"
+                                                "1 Samuel 13:16-22"
                                             )
                                         }
                                         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition flex items-center gap-2"
                                     >
                                         <BookOpen size={16} />
-                                        Read Ephesians 4:17-18
+                                        Read 1 Samuel 13:16-22
                                     </button>
 
                                 </div>
@@ -928,13 +955,46 @@ const [contentData, setContentData] = useState<ContentData>({
                                             <button
                                                 onClick={() =>
                                                     showBibleVersions(
-                                                        "Romans 12:1"
+                                                        "Psalm 62:11"
                                                     )
                                                 }
                                                 className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg transition flex items-center gap-2 text-sm shadow-md"
                                             >
                                                 <BookOpen size={16} />
-                                                Romans 12:1
+                                                Psalm 62:11
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    showBibleVersions(
+                                                        "Matthew 10:1"
+                                                    )
+                                                }
+                                                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg transition flex items-center gap-2 text-sm shadow-md"
+                                            >
+                                                <BookOpen size={16} />
+                                                Matthew 10:1
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    showBibleVersions(
+                                                        "Mark 16:17-18"
+                                                    )
+                                                }
+                                                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg transition flex items-center gap-2 text-sm shadow-md"
+                                            >
+                                                <BookOpen size={16} />
+                                                Mark 16:17-18
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    showBibleVersions(
+                                                        "Acts 1:8"
+                                                    )
+                                                }
+                                                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg transition flex items-center gap-2 text-sm shadow-md"
+                                            >
+                                                <BookOpen size={16} />
+                                                Acts 1:8
                                             </button>
                                         </div>
                                     </div>
@@ -1110,7 +1170,7 @@ const [contentData, setContentData] = useState<ContentData>({
                                                 )
                                             )} */}
                                             {/* 2. The Scripture Buttons container safely placed outside the <p> tag */}
-                                            {contentData.lessonIntroScriptures && contentData.lessonIntroScriptures.length > 0 && (
+                                            {/* {contentData.lessonIntroScriptures && contentData.lessonIntroScriptures.length > 0 && (
                                                 <div className="mt-4 flex flex-wrap gap-2">
                                                     {contentData.lessonIntroScriptures.map((scripture) => (
                                                         <button
@@ -1123,7 +1183,7 @@ const [contentData, setContentData] = useState<ContentData>({
                                                         </button>
                                                     ))}
                                                 </div>
-                                            )}
+                                            )} */}
                                     
                                         </div>
                                         

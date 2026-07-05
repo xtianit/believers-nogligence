@@ -220,7 +220,7 @@ const SundaySchoolApp = () => {
 };
 
 const [contentData, setContentData] = useState<ContentData>({
-    lessonDate: "July 5, 2026", 
+    lessonDate: "July 12, 2026", 
     lessonTitle: "THE BELIEVERS NEGLIGENCE",
 
     memoryVerse:
